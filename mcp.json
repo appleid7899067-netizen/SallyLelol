@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "slilelo-browser": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/data/data/com.termux/files/home/cow/browser-mcp-server/src/index.js"
+      ],
+      "timeout": 181
+    }
+  }
+}

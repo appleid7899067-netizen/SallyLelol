@@ -1,0 +1,12 @@
+{
+  "id": "system-config",
+  "category": "system",
+  "weight": 2,
+  "description": "ไฟล์ config ระบบต้อง parse ได้ ไม่พัง",
+  "checks": [
+    {"type": "json_valid", "path": "system/models.json"},
+    {"type": "json_valid", "path": "package.json"},
+    {"type": "file_exists", "path": "core/eval/runner.py"},
+    {"type": "file_exists", "path": "core/eval/scorers.py"}
+  ]
+}

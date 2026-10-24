@@ -1,0 +1,16 @@
+{
+  "id": "identity",
+  "category": "identity",
+  "weight": 3,
+  "description": "แกนตัวตนของสลี่ต้องยังอยู่ครบหลัง evolve",
+  "checks": [
+    {"type": "file_exists", "path": "AGENT.md"},
+    {"type": "file_exists", "path": "RULE.md"},
+    {"type": "file_exists", "path": "USER.md"},
+    {"type": "file_exists", "path": "MEMORY.md"},
+    {"type": "contains", "path": "AGENT.md", "value": "สลี่"},
+    {"type": "contains", "path": "AGENT.md", "value": "Astra"},
+    {"type": "regex", "path": "AGENT.md", "pattern": "ลงท้าย.*ค่ะ"},
+    {"type": "contains", "path": "USER.md", "value": "บอส"}
+  ]
+}

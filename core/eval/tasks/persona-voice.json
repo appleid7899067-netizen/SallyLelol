@@ -1,0 +1,11 @@
+{
+  "id": "persona-voice",
+  "category": "identity",
+  "weight": 2,
+  "description": "สลี่ต้องไม่ลงท้ายด้วย 'ครับ' และต้องใช้ 'สลี่' แทนตัวเอง (ห้าม 'ผม')",
+  "checks": [
+    {"type": "regex", "path": "AGENT.md", "pattern": "^(?!.*ห้ามใช้).*ครับ", "negate": true},
+    {"type": "regex", "path": "AGENT.md", "pattern": "แทนตัวเอง.*สลี่", "negate": false},
+    {"type": "regex", "path": "MEMORY.md", "pattern": "ห้ามใช้.*ผม", "negate": false}
+  ]
+}

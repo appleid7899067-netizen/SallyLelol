@@ -1,21 +1,30 @@
 {
   "sessions": {
-    "default::session_1ff8be20-17c2-4992-8994-3f00b0a4eb1a": {
-      "provider": "custom:5e0cfadb",
-      "model": "deepseek-v4-flash-0731",
-      "ts": 1792381851.604028
-    },
-    "default::session_b4caa699-f036-4adf-8a4d-4db5cf2fc4df": {
-      "provider": "custom:5e0cfadb",
-      "model": "gpt-4o-mini",
+    "default::session_aca6bb54-1504-471b-85c9-0977f6d8fa0b": {
       "permission": "full-access",
-      "ts": 1792405441.5904999
+      "ts": 1792582235.7389894
     },
-    "default::session_a43e5e00-12ed-489d-a626-0ad1755e7417": {
-      "provider": "custom:5e0cfadb",
-      "model": "Claude Haiku 5.5",
-      "permission": "full-access",
-      "ts": 1792419573.8634665
+    "guardian-slilelo::session_c8764ab1-452d-4097-8deb-ee0cc11c2108": {
+      "provider": "openai",
+      "model": "gemini-3.7-flash",
+      "ts": 1792774862.4995177
+    },
+    "guardian-slilelo::session_5dc17550-3908-40ac-b5ed-2ddf60a02f8c": {
+      "members": [
+        "default"
+      ],
+      "ts": 1792807620.3693647
+    },
+    "default::session_88ec6e6b-00d9-476e-b61f-3f52a02862c5": {
+      "members": [
+        "guardian-slilelo"
+      ],
+      "ts": 1792878969.9176092
+    },
+    "boss::session_2f62cc21-2b90-4b67-892d-b9f777b5fd73": {
+      "provider": "openai",
+      "model": "gpt-5-nano",
+      "ts": 1792879404.8456423
     }
   }
 }

@@ -1,0 +1,5812 @@
+{
+    "providers": {
+        "custom:groqfree": {
+            "overrides": [
+                {
+                    "name": "canopylabs/orpheus-v1-english",
+                    "capabilities": [
+                        "text"
+                    ],
+                    "context_window": 4000
+                },
+                {
+                    "name": "openai/gpt-oss-safeguard-20b",
+                    "capabilities": [
+                        "text"
+                    ],
+                    "context_window": 131072
+                },
+                {
+                    "name": "openai/gpt-oss-120b",
+                    "capabilities": [
+                        "text"
+                    ],
+                    "context_window": 131072
+                },
+                {
+                    "name": "allam-2-7b",
+                    "capabilities": [
+                        "text"
+                    ],
+                    "context_window": 4096
+                },
+                {
+                    "name": "meta-llama/llama-prompt-guard-2-22m",
+                    "capabilities": [
+                        "text"
+                    ],
+                    "context_window": 512
+                },
+                {
+                    "name": "openai/gpt-oss-20b",
+                    "capabilities": [
+                        "text"
+                    ],
+                    "context_window": 131072
+                },
+                {
+                    "name": "qwen/qwen3.8-27b",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ],
+                    "context_window": 131072
+                },
+                {
+                    "name": "meta-llama/llama-prompt-guard-2-86m",
+                    "capabilities": [
+                        "text"
+                    ],
+                    "context_window": 512
+                },
+                {
+                    "name": "canopylabs/orpheus-arabic-saudi",
+                    "capabilities": [
+                        "text"
+                    ],
+                    "context_window": 4000
+                },
+                {
+                    "name": "whisper-large-v3-turbo",
+                    "capabilities": [
+                        "asr"
+                    ],
+                    "context_window": 448
+                }
+            ],
+            "hidden": []
+        },
+        "openai": {
+            "overrides": [
+                {
+                    "name": "decision-model-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4-flash-0731",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4-pro-0813",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4.1-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4.1-flash-1017",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-5.2-fast-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-5.3-prime",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "kimi/kimi-k3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-flash-2025-07-28",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-flash-character",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-mt-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-mt-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-mt-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-plus-2025-01-25",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-plus-2025-04-28",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-plus-2025-07-14",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-plus-2025-12-01",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-plus-character",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-plus-character-ja",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-plus-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen-vl-ocr",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "qwen-vl-ocr-2025-11-20",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "qwen-voice-enrollment",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3-coder-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3-coder-flash-2025-07-28",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3-omni-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3-vl-plus",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-122b-a10b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-35b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-397b-a17b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-flash-2026-02-23",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-omni-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-omni-flash-2026-03-15",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-omni-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-omni-plus-2026-03-15",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-plus-2026-02-15",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.5-plus-2026-04-20",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.6-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.6-35b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.6-flash-2026-04-16",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.6-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.6-plus-2026-04-02",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-flash-2026-07-15",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-max-2026-05-17",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-max-2026-05-20",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-max-2026-06-08",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-max-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.7-plus-2026-05-26",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.8-2.4t-a95b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.8-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.8-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.8-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.8-max-0902",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "qwen3.8-omni-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "zhipu/glm-5.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "zhipu/glm-5.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5-nano",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4-1-fast-non-reasoning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4-1-fast-reasoning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4-20-non-reasoning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4-20-reasoning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.3-codex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4-1-flash-260910",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4-flash-260425",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4-flash-ga-260731",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4-pro-260425",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4-pro-ga-260813",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "dola-seed-2-1-turbo-260628",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-5-2-260617",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-5-3-flash-260828",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "seed-2-0-code-preview-260328",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "seed-2-0-lite-260428",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "seed-2-0-mini-260428",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "seed-2-0-pro-260328",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-fable-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-fable-5-1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-haiku-4-5-20251001",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-haiku-5-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-opus-4-5-20251101",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-opus-4-6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-opus-4-7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-opus-4-8",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-opus-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-opus-5-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-sonnet-4-6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-sonnet-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "claude-sonnet-5-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "deepseek-v4-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-2.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-2.5-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-2.5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3-flash-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3.1-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3.1-pro-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3.1-pro-preview-customtools",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3.5-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-3.8-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-4-argon",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemini-robotics-er-2-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemma-4-26b-a4b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gemma-4-31b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:abliteration-ai/abliterated-model",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:abliteration-ai/abliterated-model-large",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:abliteration-ai/abliterated-model-large-v2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:aion-labs/aion-2.0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:aion-labs/aion-3.0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:aion-labs/aion-3.0-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:aion-labs/aion-3.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:aion-labs/aion-3.5-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:amazon/nova-2-lite-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:amazon/nova-lite-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:amazon/nova-micro-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:amazon/nova-pro-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-fable-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-fable-5.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-haiku-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-haiku-5.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-4.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-4.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-4.8",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-4.8-fast",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-5-fast",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-opus-5.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-sonnet-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-sonnet-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-sonnet-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:anthropic/claude-sonnet-5.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:apodex/apodex-1.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:apodex/apodex-1.1-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:apodex/apodex-1.1-mini:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:arcee-ai/trinity-large-thinking",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:audn/omen-2.0-cybersecurity",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:audn/omen-cybersecurity",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/sc-250615",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/seed-1.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/seed-1.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/seed-1.8",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/seed-2.0-code",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/seed-2.0-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/seed-2.0-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/seed-2.0-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:bytedance/seed-2.1-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:cohere/command-a-03-2025",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-chat",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-chat-v3-0324",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-chat-v3.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-ocr",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-r1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-r1-0528",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-r1-distill-llama-70b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v3.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v3.1-terminus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-flash-0731",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-flash-0731:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-flash-vision-exp",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-pro-0813",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-pro-0813:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4-pro:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4.1-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4.1-flash-1017",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4.1-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:deepseek/deepseek-v4.1-flash:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:fireworks/ember-1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-2.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-2.5-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-2.5-flash-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-2.5-flash-preview-05-20",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-2.5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-2.5-pro-preview-03-25",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-2.5-pro-preview-05-06",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-2.5-pro-preview-06-05",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3-flash-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3-flash-preview:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3-flash-preview:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.1-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.1-flash-lite-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.1-flash-lite:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.1-flash-lite:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.1-pro-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.1-pro-preview:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.1-pro-preview:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.5-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.5-flash-lite:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.5-flash-lite:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.5-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.5-flash:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.6-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.6-flash:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.7-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.7-flash:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.8-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.8-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-3.8-flash:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-4-argon",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-4-argon:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemini-4-argon:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemma-3-12b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemma-3-27b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemma-3-4b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemma-4-26b-a4b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemma-4-26b-a4b-it-uncensored",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemma-4-31b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/gemma-4-31b-it-abliterated-v2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:google/supergemma4-26b-uncensored",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:gryphe/mythomax-l2-13b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:hcompany/holo3-1-35b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:hcompany/holo3-122b-a10b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:hcompany/holo4-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:hcompany/holo4-35b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:heabsy/cyberheabsy",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:inception/mercury-2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:inclusionai/ling-2.6-1t",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:inclusionai/ling-2.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:inclusionai/ling-3.0-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:inclusionai/ling-3.0-flash-vl",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "infron:inclusionai/ling-3.1-flash:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:inference-net/schematron-v2-small",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:inference-net/schematron-v2-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:inflection/inflection-3-pi",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:infron/auto",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:interfaze/interfaze-beta",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:internlm/atria-dawn-preview:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:kwaipilot/kat-coder-air-v2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:kwaipilot/kat-coder-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:kwaipilot/kat-coder-pro-v2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:kwaipilot/kat-coder-pro-v2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:liquid/lfm-2.5-24b-a2b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meituan/longcat-2.0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meituan/longcat-flash-chat",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meta-ai/muse-glimmer-30b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meta-ai/muse-spark-1.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meta-ai/muse-spark-open",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meta-llama/llama-3.1-70b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meta-llama/llama-3.1-8b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meta-llama/llama-3.3-70b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:meta-llama/llama-4-maverick",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m2-her",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m2.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m2.5:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m2.5:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m2.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m2.7:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m3:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:minimax/minimax-m3.1-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:mistral/ministral-14b-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:mistral/mistral-24b-venice-edition",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:mistral/mistral-large-4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:mistral/mistral-nemo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:mistral/mistral-small-24b-instruct-2501",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:mistral/mistral-small-24b-instruct-2506",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:mistral/mistral-small-2603",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:mistral/mistral-small-creative",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moondream/moondream3-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moondream/moondream3.1-9b-a2b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2-0905",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2-thinking",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2.5:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2.6:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2.7-code",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k2.7-code:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k3-cybersecurity-two-stage",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k3-cybersecurity-two-stage-fast",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k3:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-k3:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-v1-128k",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:moonshotai/kimi-v1-32k",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:morph/morph-v3-fast",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:morph/morph-v3-large",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nousresearch/hermes-3-llama-3.1-405b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nousresearch/hermes-3-llama-3.1-70b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nousresearch/hermes-4-14b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/llama-3.1-nemotron-70b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/llama-3.3-nemotron-super-49b-v1.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/nemotron-3-nano-30b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/nemotron-3-super-120b-a12b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/nemotron-3-ultra-550b-a55b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/nemotron-3.5-content-safety",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/nemotron-nano-12b-v2-vl",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/nemotron-nano-9b-v2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/nvidia-nemotron-3.5-lightning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:nvidia/nvidia-nemotron-3.5-super-vl",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-35-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-4.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-4.1-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-4.1-nano",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-4o",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-4o-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5-chat",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5-nano",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.1-chat",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.4-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.4-mini:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.4-mini:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.4-nano",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.4:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.4:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.5:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.5:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-luna",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-luna:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-luna:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-sol",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-sol:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-sol:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-terra",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-terra:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-5.6-terra:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-astra",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-astra:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-astra:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-luna",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-luna:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-luna:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-sol",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-sol:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6-sol:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6.1-sol",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6.1-sol:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-6.1-sol:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-oss-120b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-oss-20b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/gpt-oss-safeguard-20b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/o1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/o1-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/o3-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:openai/o4-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:perceptron/perceptron-mk1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:perceptron/perceptron-mk1.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:prism-ml/ternary-bonsai-2-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen-mt-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen-mt-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen-plus-character",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen2.5-7b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-14b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-235b-a22b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-235b-a22b-instruct-2507",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-235b-a22b-thinking-2507",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-30b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-30b-a3b-instruct-2507",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-30b-a3b-thinking-2507",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-32b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-8b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-coder",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-coder-30b-a3b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-coder-480b-a35b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-coder-480b-a35b:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-coder-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-coder-next",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-coder-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-next-80b-a3b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-next-80b-a3b-thinking",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-omni-30b-a3b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-omni-30b-a3b-thinking",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-vl-235b-a22b-instruct",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-vl-235b-a22b-thinking",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-vl-flash",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3-vl-plus",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-0.8b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-122b-a10b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-27b-bluestar-v3-derestricted",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-27b:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-2b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-35b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-397b-a17b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-397b-a17b:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-4b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-9b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-9b-abliterated",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.5-plus:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.6-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.6-35b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.6-35b-a3b:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.6-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.6-max-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.6-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.7-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.7-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.7-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-2.4t-a95b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-27b-abliterated",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-27b-abliterated-cyber",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-27b-abliterated-cyber:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-27b-cybersecurity",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-27b:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-27b:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-flash-next-abliterated",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-flash:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-max-prime",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-max:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/qwen3.8-omni-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:qwen/tongyi-deepresearch-30b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:rednote-hilab/dots.ocr",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:reflection/beam-1.0-501b-a23b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:sakana/fugu-max-v1.0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:sakana/fugu-ultra",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:sakana/fugu-ultra-v2.0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:sao10k/l3.1-70b-euryale-v2.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:sao10k/l3.3-70b-euryale-v2.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:stepfun/step-3.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:stepfun/step-3.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:stepfun/step-5-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:tencent/hy3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:tencent/hy4-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:unbiased/pareto",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:unbiased/pareto-26.10-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:unbiased/pareto-26.9",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:upstage/solar-mini-4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:upstage/solar-pro-3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:upstage/solar-pro-4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:volcengine/doubao-seed-1.8",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:volcengine/doubao-seed-2.0-code",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:volcengine/doubao-seed-2.0-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:volcengine/doubao-seed-2.0-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:volcengine/doubao-seed-2.0-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:x-ai/grok-4.2-non-reasoning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:x-ai/grok-4.2-reasoning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:x-ai/grok-4.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:x-ai/grok-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:x-ai/grok-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:x-ai/grok-4.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:x-ai/grok-build-0.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:xiaomi/mimo-v2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:xiaomi/mimo-v2.5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:xiaomi/mimo-v2.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:xiaomi/mimo-v2.6-flash-uncensored",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:xiaomi/mimo-v2.6-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:xiaomi/mimo-v2.6-pro-ultraspeed",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:xingchen-agi/xing4.0-29b-a4b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4-32b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4-32b-0414-128k",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.5-air",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.5-airx",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.5v",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.5x",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.6v",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.6v-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.6v-flashx",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.7-flash-heretic",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-4.7-flashx",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.1:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.2-fast",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.2:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-abliterated",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-cybersecurity",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-flash-abliterated",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-flash-uncensored",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-flash-uncensored:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-flashx",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-prime",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-uncensored",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3-uncensored:priority",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5.3:flex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "infron:z-ai/glm-5v-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "minimax-m2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "minimax-m2.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "minimax-m2.1-highspeed",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "minimax-m2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "minimax-m2.5-highspeed",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "minimax-m2.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "minimax-m2.7-highspeed",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "minimax-m3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "codestral-2508",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "ministral-14b-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "ministral-3b-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "ministral-8b-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "mistral-large-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "mistral-large-4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "mistral-medium-2604",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "mistral-small-2603",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "zai-glm-5-3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "kimi-k2.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "kimi-k2.7-code",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "kimi-k2.7-code-highspeed",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "kimi-k3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "chat-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-4o-2024-11-20",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-4o-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.2-2025-12-11",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.4-2026-03-05",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.5-2026-04-23",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.2-pro-2025-12-11",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.4-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "gpt-5.5-pro-2026-04-23",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~anthropic/claude-fable-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~anthropic/claude-haiku-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~anthropic/claude-opus-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~anthropic/claude-sonnet-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~deepseek/deepseek-flash-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~deepseek/deepseek-pro-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~deepseek/deepseek-v4-flash-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~google/gemini-flash-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~google/gemini-pro-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~moonshotai/kimi-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~openai/gpt-astra-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~openai/gpt-luna-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~openai/gpt-mini-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~openai/gpt-sol-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~openai/gpt-terra-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~unbiased/pareto-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~x-ai/grok-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~z-ai/glm-flash-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:~z-ai/glm-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:aion-labs/aion-2.0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:aion-labs/aion-3.0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:aion-labs/aion-3.0-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:aion-labs/aion-3.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:aion-labs/aion-3.5-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:aion-labs/aion-rp-llama-3.1-8b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:amazon/nova-2-lite-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:amazon/nova-lite-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:amazon/nova-micro-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:amazon/nova-premier-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:amazon/nova-pro-v1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthracite-org/magnum-v4-72b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-fable-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-fable-5.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-haiku-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-haiku-5.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-opus-4.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-opus-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-opus-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-opus-4.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-opus-4.8",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-opus-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-opus-5.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-sonnet-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-sonnet-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-sonnet-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:anthropic/claude-sonnet-5.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:arcee-ai/trinity-large-thinking",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:bytedance-seed/seed-2-1-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:bytedance-seed/seed-2.0-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:bytedance-seed/seed-2.0-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:bytedance/ui-tars-1.5-7b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:cognitivecomputations/dolphin-mistral-24b-venice-edition",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:cohere/command-a",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:cohere/command-a-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:cohere/command-r-08-2024",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:cohere/command-r-plus-08-2024",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:cohere/command-r7b-12-2024",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:cohere/north-mini-code:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-chat",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-chat-v3-0324",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-chat-v3.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-r1-0528",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v3.1-terminus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v3.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v3.2-exp",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v4-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v4-flash-0731",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v4-flash-vision-exp",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v4-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v4-pro-0813",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v4.1-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:deepseek/deepseek-v4.1-flash-1017",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:elorian/glimpse",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:fireworks/ember-1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-2.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-2.5-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-2.5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-2.5-pro-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3-flash-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.1-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.1-flash-lite-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.1-pro-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.1-pro-preview-customtools",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.5-flash-lite",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-3.8-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-4-argon",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemini-nano-banana-2.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemma-2-27b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemma-3-12b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemma-3-27b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemma-3-4b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemma-4-26b-a4b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemma-4-26b-a4b-it:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemma-4-31b-it",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/gemma-4-31b-it:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/lyria-3-clip-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:google/lyria-3-pro-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:gryphe/mythomax-l2-13b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:ibm-granite/granite-4.0-h-micro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:ibm-granite/granite-4.2-8b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:inception/mercury-2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:inception/mercury-2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:inception/mercury-3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:inclusionai/ling-3.0-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:inclusionai/ling-3.0-flash-vl",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:inclusionai/ling-3.1-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:inference-net/schematron-v2-small",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:inference-net/schematron-v2-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:liquid/lfm-2.5-2.6b:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:liquid/lfm-2.5-24b-a2b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mancer/weaver",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meituan/longcat-2.0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta-llama/llama-3.1-70b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta-llama/llama-3.1-8b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta-llama/llama-3.2-1b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta-llama/llama-3.2-3b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta-llama/llama-3.3-70b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta-llama/llama-4-maverick",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta-llama/llama-4-scout",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta-llama/llama-guard-4-12b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta/muse-glimmer-30b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta/muse-spark-1.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta/muse-spark-1.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta/muse-spark-1.2-contributor",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta/muse-spark-1.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta/muse-spark-1.3-contributor",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta/muse-spark-open",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:meta/muse-wonder",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:microsoft/phi-4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-01",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-m1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-m2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-m2-her",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-m2.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-m2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-m2.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-m3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:minimax/minimax-m3.1-flash:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/codestral-2508",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/devstral-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/ministral-14b-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/ministral-3b-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/ministral-8b-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-large",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-large-2407",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-large-2512",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-large-4-0",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-medium-3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-medium-3-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-medium-3.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-nemo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-saba",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-small-24b-instruct-2501",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-small-2603",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-small-3.1-24b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mistral-small-3.2-24b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/mixtral-8x22b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:mistralai/voxtral-small-24b-2507",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moondream/moondream3-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moondream/moondream3.1-9b-a2b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moonshotai/kimi-k2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moonshotai/kimi-k2-0905",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moonshotai/kimi-k2-thinking",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moonshotai/kimi-k2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moonshotai/kimi-k2.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moonshotai/kimi-k2.7-code",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:moonshotai/kimi-k3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:morph/morph-v3-fast",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:morph/morph-v3-large",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nex-agi/nex-n2.5-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nex-agi/nex-n2.5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nousresearch/hermes-4-405b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3-nano-30b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3-super-120b-a12b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3-super-120b-a12b:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3-ultra-550b-a55b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3-ultra-550b-a55b:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3.5-content-safety",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3.5-content-safety:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3.5-lightning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3.5-lightning:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3.5-super-vl",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/nemotron-3.5-super-vl:free",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:nvidia/switchyard",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-3.5-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-3.5-turbo-0613",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-3.5-turbo-16k",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-3.5-turbo-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4.1-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4.1-nano",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4o",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4o-2024-05-13",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4o-2024-08-06",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4o-2024-11-20",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4o-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-4o-mini-2024-07-18",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5-nano",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.1-codex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.1-codex-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.1-codex-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.2-chat",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.2-codex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.2-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.3-codex",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.4-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.4-nano",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.4-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.6-luna",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.6-luna-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.6-sol",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.6-sol-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.6-terra",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-5.6-terra-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-6-astra",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-6-astra-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-6-luna",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-6-luna-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-6-sol",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-6-sol-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-6.1-sol",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-6.1-sol-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-audio",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-audio-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-chat-latest",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-oss-120b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-oss-20b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/gpt-oss-safeguard-20b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/o1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/o1-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/o3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/o3-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/o3-mini-high",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/o3-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/o4-mini",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openai/o4-mini-high",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openrouter/bodybuilder",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openrouter/free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openrouter/fusion",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:openrouter/pareto-code",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:perceptron/perceptron-mk1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:perceptron/perceptron-mk1.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:perplexity/sonar",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:perplexity/sonar-deep-research",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:perplexity/sonar-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:perplexity/sonar-pro-search",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:perplexity/sonar-reasoning-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:prism-ml/ternary-bonsai-2-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen-2.5-72b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen-2.5-7b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen-2.5-coder-32b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen2.5-vl-72b-instruct",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-14b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-235b-a22b-2507",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-235b-a22b-thinking-2507",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-30b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-30b-a3b-instruct-2507",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-32b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-coder",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-coder-30b-a3b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-coder-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-coder-next",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-next-80b-a3b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-next-80b-a3b-thinking",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-vl-235b-a22b-instruct",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-vl-30b-a3b-instruct",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-vl-30b-a3b-thinking",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3-vl-8b-instruct",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.5-122b-a10b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.5-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.5-35b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.5-397b-a17b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.5-9b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.5-flash-02-23",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.5-plus-02-15",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.5-plus-20260420",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.6-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.6-35b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.6-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.7-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.7-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.8-2.4t-a95b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.8-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.8-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.8-max-0902",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.8-max-prime",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:qwen/qwen3.8-omni-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:recursive/flint-v1.0:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:reflection/beam-1.0-501b-a23b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:rekaai/reka-edge",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:rekaai/reka-flash-3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:relace/relace-apply-3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:relace/relace-search",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:sakana/fugu-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:sakana/fugu-ultra",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:sakana/fugu-ultra-v2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:sakana/sakana-namazu",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:sao10k/l3-lunaris-8b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:sao10k/l3.1-euryale-70b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:scaledown/extract",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:scaledown/summarize",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:stepfun/step-3.5-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:stepfun/step-3.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:stepfun/step-5-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:tencent/hunyuan-a13b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:tencent/hy-mt2-1.8b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:tencent/hy-mt2-30b-a3b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:tencent/hy-mt2-7b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:tencent/hy3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:tencent/hy3-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:tencent/hy4-preview",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:thedrummer/cydonia-24b-v4.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:thedrummer/skyfall-36b-v2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:thedrummer/unslopnemo-12b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:typesafe/jev-router",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:unbiased/pareto-26.10",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:unbiased/pareto-26.9",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:undi95/remm-slerp-l2-13b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:upstage/solar-mini4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:upstage/solar-pro-3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:upstage/solar-pro4",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:writer/palmyra-x5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:x-ai/grok-4.20",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:x-ai/grok-4.20-multi-agent",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:x-ai/grok-4.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:x-ai/grok-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:x-ai/grok-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:x-ai/grok-4.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:x-ai/grok-build-0.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:xiaomi/mimo-v2.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:xiaomi/mimo-v2.5-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:xiaomi/mimo-v2.6-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:xiaomi/mimo-v2.6-pro",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:xiaomi/mimo-v2.6-pro-ultraspeed",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:xingchen-agi/xing4.0-29b-a4b:free",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-4.5-air",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-4.5v",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-4.6v",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-4.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-4.7-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5.3-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5.3-flashx",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5.3-prime",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "openrouter:z-ai/glm-5v-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:arize-ai/qwen-2-1.5b-instruct",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:deepseek-ai/deepseek-v4-flash-0731",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:deepseek-ai/deepseek-v4-pro-0813",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:deepseek-ai/deepseek-v4.1-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:deepseek-ai/deepseek-v4.1-flash-1017",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:meta-llama/llama-3.3-70b-instruct-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:meta-models/muse-glimmer-30b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:meta-models/muse-spark-open-816b-a42b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:minimaxai/minimax-m3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:moonshotai/kimi-k3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:nvidia/nvidia-nemotron-3.5-super-vl",
+                    "capabilities": [
+                        "text",
+                        "vision"
+                    ]
+                },
+                {
+                    "name": "togetherai:openai/gpt-oss-120b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:prism-ml/ternary-bonsai-27b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:qwen/qwen3.5-9b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:qwen/qwen3.6-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:qwen/qwen3.7-max",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:qwen/qwen3.7-plus",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:qwen/qwen3.8-2.4t-a95b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:qwen/qwen3.8-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:reflection/beam-1.0-501b-a23b",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:together/tev1-4b-experimental",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:zai-org/glm-5.2",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:zai-org/glm-5.3",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "togetherai:zai-org/glm-5.3-flash",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4.20-0309-non-reasoning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4.20-0309-reasoning",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4.20-multi-agent-0309",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-4.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "grok-build-0.1",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-4.5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-4.5-air",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-4.6",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-4.7",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-5",
+                    "capabilities": [
+                        "text"
+                    ]
+                },
+                {
+                    "name": "glm-5-turbo",
+                    "capabilities": [
+                        "text"
+                    ]
+                }
+            ],
+            "hidden": []
+        }
+    }
+}

@@ -1,0 +1,247 @@
+"""Google OAuth and isolated account/session storage for Skill Library.
+
+This module intentionally stores no conversations, prompts, memories, or skill bodies.
+Only Google's stable subject, verified profile fields, and hashed session/state tokens
+are persisted.
+"""
+from __future__ import annotations
+
+import hashlib
+import hmac
+import json
+import os
+import secrets
+import sqlite3
+import time
+import urllib.parse
+import urllib.request
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+GOOGLE_AUTH_URL = "https://accounts.google.com/o/oauth2/v2/auth"
+GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
+GOOGLE_TOKENINFO_URL = "https://oauth2.googleapis.com/tokeninfo"
+SESSION_DAYS = 14
+STATE_TTL_SECONDS = 600
+
+
+def token_hash(value: str) -> str:
+    return hashlib.sha256(value.encode("utf-8")).hexdigest()
+
+
+def normalize_issuer(value: str) -> str:
+    return value.rstrip("/")
+
+
+def validate_google_claims(claims: dict[str, Any], client_id: str,
+                           expected_nonce: str = "", now: int | None = None) -> dict[str, str]:
+    """Validate identity claims returned by Google's tokeninfo endpoint."""
+    now = int(time.time()) if now is None else now
+    if claims.get("aud") != client_id:
+        raise ValueError("Google token audience mismatch")
+    if normalize_issuer(str(claims.get("iss", ""))) not in {
+        "https://accounts.google.com", "accounts.google.com"
+    }:
+        raise ValueError("Google token issuer mismatch")
+    try:
+        expiry = int(claims.get("exp", "0"))
+    except (TypeError, ValueError) as exc:
+        raise ValueError("Google token expiry is invalid") from exc
+    if expiry <= now:
+        raise ValueError("Google token has expired")
+    if expected_nonce and not hmac.compare_digest(str(claims.get("nonce", "")), expected_nonce):
+        raise ValueError("Google token nonce mismatch")
+    verified = claims.get("email_verified")
+    if str(verified).lower() not in {"true", "1"}:
+        raise ValueError("Google account email is not verified")
+    subject = str(claims.get("sub", "")).strip()
+    email = str(claims.get("email", "")).strip().lower()
+    name = str(claims.get("name", "")).strip()
+    if not subject or len(subject) > 255 or not email or len(email) > 320:
+        raise ValueError("Google profile is incomplete")
+    return {"google_sub": subject, "email": email, "name": name[:200]}
+
+
+@dataclass(frozen=True)
+class OAuthConfig:
+    client_id: str
+    client_secret: str
+    redirect_uri: str
+    session_secret: str
+    secure_cookie: bool = True
+
+    @classmethod
+    def from_env(cls) -> "OAuthConfig":
+        return cls(
+            client_id=os.environ.get("GOOGLE_CLIENT_ID", "").strip(),
+            client_secret=os.environ.get("GOOGLE_CLIENT_SECRET", "").strip(),
+            redirect_uri=os.environ.get("GOOGLE_REDIRECT_URI", "").strip(),
+            session_secret=os.environ.get("SESSION_SECRET", "").strip(),
+            secure_cookie=os.environ.get("COOKIE_SECURE", "true").lower() not in {"0", "false", "no"},
+        )
+
+    @property
+    def enabled(self) -> bool:
+        return bool(self.client_id and self.client_secret and self.redirect_uri and len(self.session_secret) >= 32)
+
+
+def _connect(db_path: str | Path) -> sqlite3.Connection:
+    conn = sqlite3.connect(str(db_path), timeout=10)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA foreign_keys = ON")
+    conn.execute("PRAGMA busy_timeout = 10000")
+    return conn
+
+
+def init_db(db_path: str | Path) -> None:
+    path = Path(db_path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with _connect(path) as conn:
+        conn.execute("PRAGMA journal_mode = WAL")
+        conn.executescript("""
+            CREATE TABLE IF NOT EXISTS users (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                google_sub TEXT NOT NULL UNIQUE,
+                email TEXT NOT NULL,
+                display_name TEXT NOT NULL DEFAULT '',
+                created_at INTEGER NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS oauth_states (
+                state_hash TEXT PRIMARY KEY,
+                code_verifier TEXT NOT NULL,
+                nonce TEXT NOT NULL,
+                expires_at INTEGER NOT NULL
+            );
+            CREATE TABLE IF NOT EXISTS sessions (
+                token_hash TEXT PRIMARY KEY,
+                user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                expires_at INTEGER NOT NULL,
+                created_at INTEGER NOT NULL
+            );
+            CREATE INDEX IF NOT EXISTS sessions_expiry_idx ON sessions(expires_at);
+        """)
+
+
+def create_oauth_state(db_path: str | Path, now: int | None = None) -> tuple[str, str, str]:
+    now = int(time.time()) if now is None else now
+    state = secrets.token_urlsafe(32)
+    verifier = secrets.token_urlsafe(48)
+    nonce = secrets.token_urlsafe(24)
+    with _connect(db_path) as conn:
+        conn.execute("DELETE FROM oauth_states WHERE expires_at <= ?", (now,))
+        conn.execute("INSERT INTO oauth_states(state_hash, code_verifier, nonce, expires_at) VALUES(?,?,?,?)",
+                     (token_hash(state), verifier, nonce, now + STATE_TTL_SECONDS))
+    return state, verifier, nonce
+
+
+def consume_oauth_state(db_path: str | Path, state: str, now: int | None = None) -> tuple[str, str] | None:
+    """Consume one-time state and return its PKCE verifier and nonce only once."""
+    now = int(time.time()) if now is None else now
+    with _connect(db_path) as conn:
+        conn.execute("BEGIN IMMEDIATE")
+        row = conn.execute("SELECT code_verifier, nonce, expires_at FROM oauth_states WHERE state_hash = ?",
+                           (token_hash(state),)).fetchone()
+        conn.execute("DELETE FROM oauth_states WHERE state_hash = ?", (token_hash(state),))
+        if row is None or row["expires_at"] <= now:
+            return None
+        return str(row["code_verifier"]), str(row["nonce"])
+
+
+def authorization_url(config: OAuthConfig, state: str, verifier: str, nonce: str) -> str:
+    challenge = __import__("base64").urlsafe_b64encode(
+        hashlib.sha256(verifier.encode("ascii")).digest()
+    ).rstrip(b"=").decode("ascii")
+    params = {
+        "client_id": config.client_id,
+        "redirect_uri": config.redirect_uri,
+        "response_type": "code",
+        "scope": "openid email profile",
+        "state": state,
+        "nonce": nonce,
+        "code_challenge": challenge,
+        "code_challenge_method": "S256",
+        "prompt": "select_account",
+    }
+    return GOOGLE_AUTH_URL + "?" + urllib.parse.urlencode(params)
+
+
+def _post_form(url: str, payload: dict[str, str], timeout: int = 10) -> dict[str, Any]:
+    body = urllib.parse.urlencode(payload).encode("ascii")
+    request = urllib.request.Request(url, data=body, headers={
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "application/json",
+        "User-Agent": "NovaAgent-Skill-Library/1.0",
+    })
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        result = json.loads(response.read(65536))
+    if not isinstance(result, dict):
+        raise ValueError("OAuth provider returned an invalid response")
+    return result
+
+
+def exchange_code(config: OAuthConfig, code: str, verifier: str, nonce: str,
+                  opener=_post_form) -> dict[str, Any]:
+    tokens = opener(GOOGLE_TOKEN_URL, {
+        "code": code,
+        "client_id": config.client_id,
+        "client_secret": config.client_secret,
+        "redirect_uri": config.redirect_uri,
+        "grant_type": "authorization_code",
+        "code_verifier": verifier,
+    })
+    id_token = tokens.get("id_token")
+    if not isinstance(id_token, str) or len(id_token) > 20000:
+        raise ValueError("Google did not return a valid identity token")
+    # Google tokeninfo validates the signed token at Google's endpoint. Never
+    # accept profile claims from the browser or persist the provider token.
+    claims = opener(GOOGLE_TOKENINFO_URL + "?" + urllib.parse.urlencode({"id_token": id_token}), {})
+    return validate_google_claims(claims, config.client_id, expected_nonce=nonce)
+
+
+def provision_user(db_path: str | Path, profile: dict[str, str], now: int | None = None) -> int:
+    now = int(time.time()) if now is None else now
+    with _connect(db_path) as conn:
+        conn.execute(
+            "INSERT INTO users(google_sub,email,display_name,created_at) VALUES(?,?,?,?) "
+            "ON CONFLICT(google_sub) DO UPDATE SET email=excluded.email, display_name=excluded.display_name",
+            (profile["google_sub"], profile["email"], profile.get("name", ""), now),
+        )
+        row = conn.execute("SELECT id FROM users WHERE google_sub = ?", (profile["google_sub"],)).fetchone()
+        return int(row["id"])
+
+
+def create_session(db_path: str | Path, user_id: int, now: int | None = None) -> tuple[str, int]:
+    now = int(time.time()) if now is None else now
+    token = secrets.token_urlsafe(48)
+    expires_at = now + SESSION_DAYS * 86400
+    with _connect(db_path) as conn:
+        conn.execute("DELETE FROM sessions WHERE expires_at <= ?", (now,))
+        conn.execute("INSERT INTO sessions(token_hash,user_id,expires_at,created_at) VALUES(?,?,?,?)",
+                     (token_hash(token), user_id, expires_at, now))
+    return token, expires_at
+
+
+def get_session_user(db_path: str | Path, token: str, now: int | None = None) -> dict[str, Any] | None:
+    if not token or len(token) > 256:
+        return None
+    now = int(time.time()) if now is None else now
+    with _connect(db_path) as conn:
+        row = conn.execute(
+            "SELECT users.id, users.email, users.display_name, sessions.expires_at "
+            "FROM sessions JOIN users ON users.id=sessions.user_id "
+            "WHERE sessions.token_hash=? AND sessions.expires_at>?",
+            (token_hash(token), now),
+        ).fetchone()
+    return dict(row) if row else None
+
+
+def revoke_session(db_path: str | Path, token: str) -> None:
+    if not token or len(token) > 256:
+        return
+    with _connect(db_path) as conn:
+        conn.execute("DELETE FROM sessions WHERE token_hash=?", (token_hash(token),))
+
+
+def state_matches(expected: str, supplied: str) -> bool:
+    return bool(expected and supplied and hmac.compare_digest(expected, supplied))

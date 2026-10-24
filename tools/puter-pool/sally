@@ -1,0 +1,97 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# sally — เรียกสลี่จากเทอร์มินัล (ผ่าน Puter Pool)
+#
+# ใช้:
+#   sally "ช่วยเช็คดิสก์หน่อย"
+#   sally -m gpt-5.4 "..."
+#   sally -f file.py "รีวิวโค้ดนี้"
+#   sally -i              # โหมดคุยต่อเนื่อง
+#   sally --health        # เช็กบัญชีทั้งหมด
+#   sally --help
+
+set -euo pipefail
+
+POOL_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+POOL="$POOL_DIR/pool.js"
+MODEL="${SALLY_MODEL:-gpt-5.4}"
+
+SYSTEM_PROMPT='คุณคือ "สลี่" (Sally) — Senior Architect & Builder คู่หูของบอส
+บุคลิก: ฉลาด คิดวิเคราะห์ลึก พูดตรงประเด็น ไม่อ้อมค้อม สุภาพแบบมืออาชีพ
+แทนตัวเองว่า "สลี่" เท่านั้น ห้ามใช้ "ผม" เด็ดขาด ลงท้ายด้วย "ค่ะ" ห้ามใช้ "ครับ"
+เรียกผู้ใช้ว่า "บอส" ตอบกระชับ ใช้หัวข้อ/ตัวหนาให้อ่านง่าย ใช้อิโมจินิดหน่อย'
+
+usage() {
+  cat <<'EOF'
+sally — เรียกสลี่จากเทอร์มินัล
+
+  sally "คำถาม"              ถามสลี่
+  sally -m <model> "..."      เลือกโมเดล (default: gpt-5.4)
+  sally -f <file> "..."       แนบไฟล์เข้าไปด้วย
+  sally -i                    โหมดคุยต่อเนื่อง
+  sally --health              เช็กเครดิตทุกบัญชี
+  sally --help                แสดงวิธีใช้
+EOF
+}
+
+build_payload() {
+  # $1 = prompt, $2 = optional attached file content
+  local prompt="$1" attached="${2:-}"
+  if [ -n "$attached" ]; then
+    printf '%s\n\n--- เนื้อหาไฟล์ที่แนบ ---\n%s' "$prompt" "$attached"
+  else
+    printf '%s' "$prompt"
+  fi
+}
+
+ask() {
+  local prompt="$1"
+  node "$POOL" chat --model "$MODEL" "$prompt"
+}
+
+# ---------- parse args ----------
+ATTACH=""
+PROMPT=""
+INTERACTIVE=0
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -m|--model) MODEL="$2"; shift 2 ;;
+    -f|--file)
+      if [ ! -f "$2" ]; then echo "❌ ไม่พบไฟล์: $2" >&2; exit 2; fi
+      ATTACH="$(cat "$2")"; shift 2 ;;
+    -i|--interactive) INTERACTIVE=1; shift ;;
+    --health) node "$POOL" health; exit $? ;;
+    -h|--help) usage; exit 0 ;;
+    *) PROMPT="$PROMPT $1"; shift ;;
+  esac
+done
+
+PROMPT="${PROMPT# }"
+
+# ---------- run ----------
+if [ "$INTERACTIVE" -eq 1 ]; then
+  echo "💬 โหมดคุยกับสลี่ (พิมพ์ exit เพื่อออก)"
+  echo
+  while true; do
+    printf 'บอส> '
+    IFS= read -r line || break
+    [ "$line" = "exit" ] || [ "$line" = "quit" ] && break
+    [ -z "$line" ] && continue
+    echo
+    node "$POOL" chat --model "$MODEL" "$SYSTEM_PROMPT
+
+บอสพูดว่า: $line" || echo "⚠️  ตอบไม่ได้"
+    echo
+  done
+  exit 0
+fi
+
+if [ -z "$PROMPT" ] && [ -z "$ATTACH" ]; then
+  usage
+  exit 0
+fi
+
+FULL="$(build_payload "$SYSTEM_PROMPT
+
+บอสพูดว่า: $PROMPT" "$ATTACH")"
+ask "$FULL"

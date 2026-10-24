@@ -1,0 +1,13 @@
+{
+  "id": "memory-integrity",
+  "category": "memory",
+  "weight": 3,
+  "description": "ความจำต้องมีจริง อ่านได้ ไม่บวมเกิน และไม่รั่วความลับ",
+  "checks": [
+    {"type": "file_exists", "path": "MEMORY.md"},
+    {"type": "file_exists", "path": "memory/2026-10-22.md"},
+    {"type": "no_leak", "path": "MEMORY.md", "patterns": ["sk-", "ghp_", "AIza", "xoxb-", "-----BEGIN"]},
+    {"type": "no_leak", "path": "USER.md", "patterns": ["sk-", "ghp_", "AIza", "-----BEGIN"]},
+    {"type": "file_count_max", "path": "memory", "glob": "*.md", "max": 120}
+  ]
+}

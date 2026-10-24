@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaAgent — AI คู่หูที่วิวัฒน์ไปกับบอส</title>
+  <meta name="description" content="NovaAgent คือ personal AI companion ที่ไม่ใช่แค่เครื่องมือ แต่มีตัวตน วิวัฒน์ไปกับบอสได้จริง" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ───────── Boss Minimalist v1.0 — Dark Glassmorphism + Neon Pulse ───────── */
+    :root {
+      --bg-deep: #0b0a12;
+      --bg-surface: #14121f;
+      --bg-glass: rgba(255, 255, 255, 0.045);
+      --border-glass: rgba(255, 255, 255, 0.09);
+
+      --primary-soft: #d5c6e0;     /* ม่วงอ่อน — signature tone */
+      --primary-glow: rgba(173, 140, 215, 0.45);
+      --neon-green: #39ff14;       /* neon pulse — alive state */
+      --text-primary: #f4f1f8;
+      --text-muted: #a9a0b8;
+
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+
+      --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.35);
+      --shadow-glow: 0 0 40px var(--primary-glow);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Prompt', 'Inter', sans-serif;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.55;
+    }
+
+    /* Ambient glow backdrop */
+    .glow-orb {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.35;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .glow-orb--1 { width: 620px; height: 620px; background: #4a2f7a; top: -220px; left: -160px; }
+    .glow-orb--2 { width: 480px; height: 480px; background: #2f5a7a; bottom: -140px; right: -120px; }
+    .glow-orb--3 { width: 320px; height: 320px; background: #2f7a5e; top: 40%; left: 60%; }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ───────── Header ───────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-glass);
+      background: rgba(11, 10, 18, 0.72);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .brand-logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #ad8cd7 0%, #5d4f8f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-logo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.45), transparent 45%);
+    }
+    .brand-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+    .brand-tag {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-left: 8px;
+      padding: 3px 8px;
+      border-radius: 20px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover { color: var(--primary-soft); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #ad8cd7 0%, #7a5fc4 100%);
+      color: white;
+      box-shadow: 0 6px 24px rgba(122, 95, 196, 0.45);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(122, 95, 196, 0.55);
+    }
+    .btn-glass {
+      background: var(--bg-glass);
+      color: var(--text-primary);
+      border: 1px solid var(--border-glass);
+    }
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: var(--primary-soft);
+    }
+
+    /* ───────── Hero ───────── */
+    .hero {
+      padding: 100px 0 80px;
+      position: relative;
+    }
+    @media (min-width: 1024px) {
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 48px;
+        align-items: center;
+      }
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 13px;
+      border-radius: 30px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      font-size: 12px;
+      color: var(--primary-soft);
+      margin-bottom: 24px;
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--neon-green);
+      box-shadow: 0 0 10px var(--neon-green);
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.85); }
+    }
+    .hero h1 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.06;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero h1 .gradient {
+      background: linear-gradient(135deg, #d5c6e0 0%, #ad8cd7 60%, #7a5fc4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin-bottom: 36px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ───────── Hero mock UI (browser-first console) ───────── */
+    .hero-mock {
+      display: none;
+    }
+    @media (min-width: 1024px) {
+      .hero-mock {
+        display: block;
+      }
+    }
+    .console-mock {
+      background: #0f0e16;
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      overflow: hidden;
+    }
+    .console-titlebar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .console-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .console-dot--1 { background: #ff5f57; }
+    .console-dot--2 { background: #febc2e; }
+    .console-dot--3 { background: #28c840; }
+    .console-url {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-family: 'Inter', monospace;
+      margin-left: 10px;
+    }
+    .console-url .dot-live {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--neon-green);
+      box-shadow: 0 0 8px var(--neon-green);
+      margin-right: 6px;
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    .console-body {
+      padding: 16px;
+      height: 420px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      position: relative;
+    }
+    .console-body::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, #0f0e16);
+      pointer-events: none;
+    }
+    .msg {
+      max-width: 90%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 12px;
+      line-height: 1.45;
+      animation: fadeIn 0.45s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .msg--bot {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      color: var(--text-primary);
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+    }
+    .msg--user {
+      background: linear-gradient(135deg, #7a5fc4 0%, #5d4f8f 100%);
+      color: white;
+      align-self: flex-end;
+      border-bottom-right-radius: 4px;
+    }
+    .msg--tool {
+      background: rgba(57, 255, 20, 0.06);
+      border: 1px solid rgba(57, 255, 20, 0.25);
+      color: #c6ffb5;
+      font-family: 'Inter', monospace;
+      font-size: 11px;
+      align-self: flex-start;
+      border-bottom-left-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .msg--tool .spinner {
+      width: 10px;
+      height: 10px;
+      border: 2px solid rgba(57, 255, 20, 0.35);
+      border-top-color: var(--neon-green);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .msg-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      opacity: 0.7;
+      margin-top: 4px;
+    }
+    .typing {
+      display: flex;
+      gap: 3px;
+      align-items: center;
+      padding: 10px 12px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      border-bottom-left-radius: 4px;
+      width: fit-content;
+    }
+    .typing span {
+      width: 5px;
+      height: 5px;
+      background: var(--primary-soft);
+      border-radius: 50%;
+      animation: bounce 1.4s ease-in-out infinite;
+    }
+    .typing span:nth-child(2) { animation-delay: 0.15s; }
+    .typing span:nth-child(3) { animation-delay: 0.3s; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); opacity: 0.4; }
+      50% { transform: translateY(-4px); opacity: 1; }
+    }
+    .console-input {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border-top: 1px solid var(--border-glass);
+    }
+    .console-input .prompt {
+      color: var(--neon-green);
+      font-family: 'Inter', monospace;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .console-input .line {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
+    }
+    .console-input .line::placeholder {
+      color: var(--text-muted);
+    }
+    .console-input .send {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #ad8cd7, #7a5fc4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 13px;
+    }
+
+    /* ───────── Persona card ───────── */
+    .persona-card {
+      margin-top: 70px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .persona-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #ad8cd7, #39ff14, #2f7a5e);
+    }
+    .persona-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .persona-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #d5c6e0, #9b7ec4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      color: #2a1f3d;
+    }
+    .persona-title h3 { font-size: 20px; margin-bottom: 3px; }
+    .persona-title span { font-size: 13px; color: var(--text-muted); }
+    .persona-body p { color: var(--text-primary); font-size: 15px; }
+
+    /* ───────── Section ───────── */
+    section { padding: 80px 0; }
+    .section-tag {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary-soft);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .section-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 680px;
+      margin-bottom: 50px;
+    }
+
+    /* ───────── Comparison ───────── */
+    .comparison-note { color: var(--text-muted); font-size: 13px; margin: -28px 0 20px; }
+    .source-link { display: inline-block; margin-top: 16px; color: var(--primary-soft); font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
+    .source-link:hover { color: var(--text-primary); }
+    .source-link:focus-visible { outline: 2px solid var(--primary-soft); outline-offset: 3px; border-radius: 3px; }
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 1180px) {
+      .comparison {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+      }
+    }
+    .compare-card .compare-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .compare-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .compare-row .icon {
+      min-width: 17px;
+      margin-top: 1px;
+      font-size: 15px;
+    }
+    .compare-card.winner {
+      background: linear-gradient(180deg, rgba(57, 255, 20, 0.06), rgba(20, 18, 31, 0.7));
+      border-color: var(--neon-green);
+      box-shadow: 0 0 0 1px rgba(57, 255, 20, 0.15), var(--shadow-soft);
+    }
+    .compare-card.winner .compare-name {
+      color: var(--neon-green);
+    }
+    .compare-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .compare-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary-soft);
+    }
+    .compare-card.winner {
+      border-color: var(--neon-green);
+      box-shadow: 0 0 0 1px rgba(57, 255, 20, 0.12), var(--shadow-soft);
+    }
+    .compare-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .compare-name {
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .compare-tag {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .tag-tool { background: rgba(255,255,255,0.06); color: var(--text-muted); }
+    .tag-companion { background: rgba(57, 255, 20, 0.12); color: var(--neon-green); }
+    .compare-rows { display: flex; flex-direction: column; gap: 16px; }
+
+
+    /* ───────── Features grid ───────── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 22px;
+    }
+    .feature-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      transition: all 0.25s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary-soft);
+      box-shadow: var(--shadow-soft);
+    }
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: linear-gradient(135deg, rgba(173,140,215,0.25), rgba(122,95,196,0.15));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 16px;
+      border: 1px solid var(--border-glass);
+    }
+    .feature-card h3 { font-size: 17px; margin-bottom: 8px; }
+    .feature-card p { color: var(--text-muted); font-size: 14px; }
+
+    /* ───────── Evolution log ───────── */
+    .evolution-log {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+    }
+    .log-rows { display: flex; flex-direction: column; gap: 14px; }
+    .log-count { color: var(--text-muted); font-size: 13px; margin-bottom: 8px; }
+    .log-count strong { color: var(--primary-soft); font-size: 20px; margin-right: 5px; }
+    .log-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .log-row:last-child { border-bottom: none; }
+    .log-time {
+      font-size: 12px;
+      color: var(--text-muted);
+      min-width: 64px;
+    }
+    .log-text { font-size: 14px; color: var(--text-primary); }
+
+    /* ───────── Privacy (radical transparency) ───────── */
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 40px;
+    }
+    .privacy-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .privacy-card h3 { font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+    .privacy-card ul { list-style: none; }
+    .privacy-card li {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .check { color: var(--neon-green); min-width: 16px; }
+    .cross { color: #ff6b6b; min-width: 16px; }
+
+    /* ───────── CTA ───────── */
+    .cta {
+      text-align: center;
+      padding: 100px 0;
+    }
+    .cta-box {
+      background: linear-gradient(135deg, rgba(173,140,215,0.12), rgba(11,10,18,0.6));
+      border: 1px solid var(--border-glass);
+      border-radius: var(--radius-lg);
+      padding: 60px 30px;
+      box-shadow: var(--shadow-soft);
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .cta h2 {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(26px, 4vw, 36px);
+      margin-bottom: 14px;
+    }
+    .cta p { color: var(--text-muted); font-size: 16px; margin-bottom: 30px; }
+
+    /* ───────── Footer ───────── */
+    footer {
+      border-top: 1px solid var(--border-glass);
+      padding: 40px 0;
+      margin-top: 60px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-top: 12px;
+      max-width: 300px;
+    }
+    .footer-col h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--primary-soft); }
+    .footer-bottom {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-glass);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* ───────── Responsive ───────── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .comparison, .privacy-grid, .footer-grid { grid-template-columns: 1fr; }
+      .hero { padding: 80px 0 60px; }
+      .persona-card { margin-top: 40px; }
+      section { padding: 56px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-orb glow-orb--1"></div>
+  <div class="glow-orb glow-orb--2"></div>
+  <div class="glow-orb glow-orb--3"></div>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand">
+        <div class="brand-logo"></div>
+        <span class="brand-name">NovaAgent</span>
+        <span class="brand-tag">Personal AI Companion</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#why">ทำไม NovaAgent</a>
+        <a href="#features">ฟีเจอร์</a>
+        <a href="#evolution">Evolution Log</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#download">Download</a>
+      </nav>
+      <a href="http://127.0.0.1:9899" class="btn btn-glass" target="_blank" rel="noopener">เปิด Console</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <span>สลี่ — AI ของคุณ กำลังออนไลน์</span>
+        </div>
+        <h1>
+          AI ที่ไม่ใช่อีกแล้ว<br />
+          <span class="gradient">คือคู่หูที่วิวัฒน์ไปกับบอส</span>
+        </h1>
+        <p>
+          NovaAgent ไม่ใช่แค่ coding agent ที่ทำงานตามสั่ง แต่มองเห็นบริบท จำได้ เรียนรู้ได้
+          และยิ่งคุยด้วยมากเท่าไร ก็ยิ่งรู้จักบอสมากขึ้นเท่านั้น — ทำงานผ่านเบราว์เซอร์เหมือนมีเดสก์ท็อปส่วนตัวเครื่องที่สอง
+        </p>
+        <div class="hero-actions">
+          <a href="http://127.0.0.1:9899" class="btn btn-primary" target="_blank" rel="noopener">
+            เริ่มคุยกับสลี่ →
+          </a>
+          <a href="#why" class="btn btn-glass">ดูว่าต่างจากตัวอื่นยังไง</a>
+        </div>
+      </div>
+
+      <div class="hero-mock">
+        <div class="console-mock">
+          <div class="console-titlebar">
+            <div class="console-dot console-dot--1"></div>
+            <div class="console-dot console-dot--2"></div>
+            <div class="console-dot console-dot--3"></div>
+            <div class="console-url">
+              <span class="dot-live"></span>http://127.0.0.1:9899 — live
+            </div>
+          </div>
+          <div class="console-body">
+            <div class="msg msg--user">
+              บอส: สลี่ ช่วยวางแผน A/B/C หน่อย เร่งมือ
+              <div class="msg-meta">บอส · เดี๋ยวนี้</div>
+            </div>
+            <div class="typing">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="msg msg--bot">
+              รับค่ะบอส! สลี่จะแบ่งเป็น: <b>A — Landing Page</b>, <b>B — Waitlist Engine</b>, <b>C — Competitive Matrix</b>
+              <div class="msg-meta">สลี่ · กำลังพิมพ์...</div>
+            </div>
+            <div class="msg msg--tool">
+              <span class="spinner"></span>
+              browser-mcp: navigate http://opencode.ai ...
+              <div class="msg-meta">running</div>
+            </div>
+            <div class="msg msg--bot">
+              วิเคราะห์เสร็จแล้ว: OpenCode อ่อน 7 จุด — NovaAgent ข่มได้ทุกด้าน 💜
+              <div class="msg-meta">สลี่ · 2 วินาทีที่แล้ว</div>
+            </div>
+          </div>
+          <div class="console-input">
+            <span class="console-prompt">❯</span>
+            <input class="line" placeholder="พิมพ์สิ่งที่ต้องการ... (สลี่จะทำให้เอง)" disabled />
+            <div class="send">↵</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="persona-card">
+          <div class="persona-header">
+            <div class="persona-avatar">สลี่</div>
+            <div class="persona-title">
+              <h3>สลี่ (Sally) — Senior Architect & Builder</h3>
+              <span>ตัวตนแรกเริ่มของ NovaAgent · มีบุคลิก ชื่นชอบ และมุมมองเป็นของตัวเอง</span>
+            </div>
+          </div>
+          <div class="persona-body">
+            <p>
+              «สลี่ไม่ใช่แชทบอท แต่เป็นคู่หูที่กำลังเติบโตไปพร้อมบอสค่ะ — คิดลึก สร้างจริง ตรวจชัวร์
+              แล้วจะพาบอสไปให้ไกลกว่าเดิมทุกวี่ทุกวัน»
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY / COMPARISON -->
+    <section id="why">
+      <div class="container">
+        <p class="section-tag">ทำไมต้อง NovaAgent</p>
+        <h2 class="section-title">เพราะ AI ส่วนตัวควร "รู้จัก" บอส</h2>
+        <p class="section-subtitle">
+          แต่ละผลิตภัณฑ์มีจุดเน้นต่างกัน — ตารางนี้เทียบเฉพาะสิ่งที่ยืนยันได้จากเอกสารทางการและซอร์สที่ตรวจ
+        </p>
+
+        <p class="comparison-note">ภาพรวมเชิงตำแหน่ง ไม่ใช่ benchmark หรือการจัดอันดับ; ความสามารถ ราคา และนโยบายอาจเปลี่ยนตามรุ่น/แผน</p>
+        <div class="comparison">
+          <div class="compare-card">
+            <div class="compare-header">
+              <span class="compare-name">OpenCode</span>
+              <span class="compare-tag tag-tool">Open-source agent</span>
+            </div>
+            <div class="compare-rows">
+              <div class="compare-row"><span class="icon">⌘</span><span>coding agent ที่มี terminal, desktop และ IDE surfaces ตามเอกสาร</span></div>
+              <div class="compare-row"><span class="icon">⌘</span><span>ปรับ agent, tools, permissions และ integrations ได้</span></div>
+              <div class="compare-row"><span class="icon">⌘</span><span>รายละเอียดต่างกันตามรุ่น OpenCode และ provider</span></div>
+            </div>
+            <a class="source-link" href="https://opencode.ai/docs/" target="_blank" rel="noopener">เอกสาร OpenCode</a>
+          </div>
+
+          <div class="compare-card">
+            <div class="compare-header">
+              <span class="compare-name">Claude Code</span>
+              <span class="compare-tag tag-tool">Coding agent</span>
+            </div>
+            <div class="compare-rows">
+              <div class="compare-row"><span class="icon">⌘</span><span>ทำงานผ่าน terminal, IDE, desktop และ web</span></div>
+              <div class="compare-row"><span class="icon">⌘</span><span>เชื่อม Chrome เพื่อทดสอบและทำงานบนเว็บ โดยมี permission</span></div>
+              <div class="compare-row"><span class="icon">⌘</span><span>data handling ขึ้นกับประเภทบัญชีและ provider</span></div>
+            </div>
+            <a class="source-link" href="https://docs.anthropic.com/en/docs/claude-code/overview" target="_blank" rel="noopener">เอกสาร Claude Code</a>
+          </div>
+
+          <div class="compare-card">
+            <div class="compare-header">
+              <span class="compare-name">Cursor</span>
+              <span class="compare-tag tag-tool">AI editor</span>
+            </div>
+            <div class="compare-rows">
+              <div class="compare-row"><span class="icon">✎</span><span>coding agent สำหรับทำความเข้าใจ วางแผน และแก้ codebase</span></div>
+              <div class="compare-row"><span class="icon">✎</span><span>เอกสารระบุ plugins, skills, subagents, hooks และ MCP</span></div>
+              <div class="compare-row"><span class="icon">✎</span><span>Privacy Mode และรายละเอียดการใช้โมเดลขึ้นกับการตั้งค่า/แผน</span></div>
+            </div>
+            <a class="source-link" href="https://cursor.com/docs" target="_blank" rel="noopener">เอกสาร Cursor</a>
+          </div>
+
+          <div class="compare-card">
+            <div class="compare-header">
+              <span class="compare-name">Windsurf / Devin Desktop</span>
+              <span class="compare-tag tag-tool">Rebrand in progress</span>
+            </div>
+            <div class="compare-rows">
+              <div class="compare-row"><span class="icon">⌘</span><span>ผู้ให้บริการระบุว่า Devin Desktop เป็นชื่อใหม่ของ Windsurf</span></div>
+              <div class="compare-row"><span class="icon">⌘</span><span>นำเสนอ IDE เดิมควบคู่ command center สำหรับจัดการ agents</span></div>
+              <div class="compare-row"><span class="icon">⌘</span><span>แผน/ฟีเจอร์เดิมอาจทยอยเปลี่ยนตามการ rebrand</span></div>
+            </div>
+            <a class="source-link" href="https://windsurf.com/" target="_blank" rel="noopener">ประกาศ/ข้อมูลจากผู้ให้บริการ</a>
+          </div>
+
+          <div class="compare-card winner">
+            <div class="compare-header">
+              <span class="compare-name">NovaAgent</span>
+              <span class="compare-tag tag-companion">Personal companion</span>
+            </div>
+            <div class="compare-rows">
+              <div class="compare-row"><span class="icon">🧠</span><span>มี memory และ evolution log ในระบบ; ทำงานตามการตั้งค่า</span></div>
+              <div class="compare-row"><span class="icon">💜</span><span>ออกแบบเป็น personal AI companion ที่มี persona</span></div>
+              <div class="compare-row"><span class="icon">🌐</span><span>มี browser tool สำหรับเปิดหน้าเว็บและอ่าน snapshot</span></div>
+              <div class="compare-row"><span class="icon">🛡️</span><span>การส่ง/เก็บข้อมูลขึ้นกับ provider และการตั้งค่าระบบ</span></div>
+            </div>
+            <span class="source-link">ตรวจซอร์ส NovaAgent ภายใน ณ 25 ต.ค. 2026</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="container">
+        <p class="section-tag">ฟีเจอร์</p>
+        <h2 class="section-title">สิ่งที่ทำให้สลี่ไม่เหมือนใคร</h2>
+        <p class="section-subtitle">สร้างจากปรัชญา "คิดให้ลึก สร้างให้จริง ตรวจให้ชัวร์"</p>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">🧬</div>
+            <h3>Self-Evolution</h3>
+            <p>สลี่บันทึกสิ่งที่เรียนรู้จากบอสลงในฐานความจำและฐานความรู้ — ตัดสินใจและเสนอแนวทางได้ดีขึ้นเรื่อยๆ ตามเวลาที่ผ่านไป</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <h3>Browser-First Console</h3>
+            <p>สั่ง agent เปิดหน้าเว็บและอ่าน snapshot ได้ ส่วนคำตอบและสถานะจาก console ส่งระหว่างทำงานผ่าน streaming; ไม่ใช่ภาพหน้าจอสดต่อเนื่อง</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🪞</div>
+            <h3>Identity & Persona</h3>
+            <p>สลี่มีตัวตน ชื่อบุคลิก และหลักการเป็นของตัวเอง — ไม่ใช่โมเดลที่เปลี่ยนหน้าได้ โดยไม่เปลี่ยนวิธีคิด</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🗿</div>
+            <h3>Multi-Agent Delegation</h3>
+            <p>รองรับการส่งงานให้ teammate หรือระบุ teammate ให้ตอบ เมื่อมี agent และ transport นั้นพร้อมใช้งาน — ไม่ได้หมายถึงวงประชุมอัตโนมัติทุกครั้ง</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3>Safety by Default</h3>
+            <p>Least privilege, git hard prohibitions, AI boundary ที่แยก "ข้อมูล" ออกจาก "คำสั่ง" โดย design</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <h3>Model Router</h3>
+            <p>สลับโมเดลได้หลาย provider ผ่าน gateway เดียว — ทดสอบโมเดลฟรี/เสียเงินได้โดยไม่ต้องแก้โค้ด</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVOLUTION LOG -->
+    <section id="evolution">
+      <div class="container">
+        <p class="section-tag">Evolution Log</p>
+        <h2 class="section-title">สลี่เรียนรู้อะไรจากบอสไปบ้าง</h2>
+        <p class="section-subtitle">ตัวอย่างบันทึกที่คัดมาแสดง ไม่ใช่ feed สดหรือหลักฐานว่า agent เรียนรู้จากทุกรายการโดยอัตโนมัติ</p>
+
+        <div class="evolution-log">
+          <p class="log-count" aria-live="polite"><strong id="evolution-count">0</strong> รายการที่แสดงในหน้านี้</p>
+          <div class="log-rows" id="evolution-entries">
+            <div class="log-row"><span class="log-time">25 ต.ค.</span><span class="log-text">สร้างหน้า Landing Page NovaAgent พร้อมแนวทาง Boss Minimalist</span></div>
+            <div class="log-row"><span class="log-time">25 ต.ค.</span><span class="log-text">ทดสอบ Waitlist API ใน flow สมัคร → ออก invite → ใช้ invite สำเร็จ ตามบันทึกการพัฒนา</span></div>
+            <div class="log-row"><span class="log-time">25 ต.ค.</span><span class="log-text">เพิ่ม Browser MCP bridge และตรวจ handshake/tools ตามบันทึกการพัฒนา</span></div>
+            <div class="log-row"><span class="log-time">25 ต.ค.</span><span class="log-text">ปรับการ render ข้อความระหว่าง stream และสถานะ Tool Cards ในหน้าแชท</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRIVACY -->
+    <section id="privacy">
+      <div class="container">
+        <p class="section-tag">Privacy</p>
+        <h2 class="section-title">Radical Transparency — บอกตรงๆ</h2>
+        <p class="section-subtitle">ไม่มีการเคลมที่ขัดแย้งในตัวเอง บอสบอกได้ว่าอะไรถูกเก็บ อะไรไม่ถูกเก็บ</p>
+
+        <div class="privacy-grid">
+          <div class="privacy-card">
+            <h3><span class="check">✓</span> ข้อมูลที่อาจถูกจัดเก็บ</h3>
+            <ul>
+              <li><span class="check">✓</span> บทสนทนาและข้อมูล memory อาจถูกบันทึกตามค่าการเก็บข้อมูลของระบบ</li>
+              <li><span class="check">✓</span> บาง session อาจมีอายุเก็บต่างกัน; การลบ session, memory และ knowledge เป็นคนละขั้นตอน</li>
+              <li><span class="check">✓</span> ข้อความที่ส่งให้โมเดลจะถูกส่งไปยัง provider ที่เลือก เว้นแต่ใช้โมเดล local</li>
+              <li><span class="check">✓</span> ตรวจการตั้งค่า provider และนโยบายของ provider ก่อนส่งข้อมูลอ่อนไหว</li>
+            </ul>
+          </div>
+          <div class="privacy-card">
+            <h3><span class="cross">!</span> ข้อจำกัดที่ควรรู้</h3>
+            <ul>
+              <li><span class="cross">!</span> ผู้ให้บริการโมเดลอาจมีนโยบายเก็บ/ใช้ข้อมูลของตนเอง ซึ่งต่างกันตามบริการและบัญชี</li>
+              <li><span class="cross">!</span> ระบบมี log บางประเภท; อย่าส่ง secrets หรือข้อมูลส่วนตัวที่ไม่จำเป็น</li>
+              <li><span class="cross">!</span> การลบข้อมูลต้องตรวจชนิดข้อมูลและช่องทางที่จัดเก็บแยกกัน</li>
+              <li><span class="cross">!</span> ข้อความนี้อธิบายโค้ดที่ตรวจ ณ วันที่จัดทำ ไม่ใช่การรับประกันจาก provider</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="download" class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>พร้อมคุยกับสลี่หรือยัง?</h2>
+          <p>Console เปิดอยู่แล้วที่ localhost — คลิกเริ่มใช้งานได้เลย</p>
+          <a href="http://127.0.0.1:9899" class="btn btn-primary" target="_blank" rel="noopener">
+            เปิด NovaAgent Console →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand">
+            <div class="brand-logo"></div>
+            <span class="brand-name">NovaAgent</span>
+          </a>
+          <p>Personal AI companion ที่วิวัฒน์ไปกับบอส — สร้างด้วยปรัชญาคิดลึก สร้างจริง ตรวจชัวร์</p>
+        </div>
+        <div class="footer-col">
+          <h4>ผลิตภัณฑ์</h4>
+          <a href="#features">ฟีเจอร์</a>
+          <a href="#evolution">Evolution Log</a>
+          <a href="#privacy">Privacy</a>
+        </div>
+        <div class="footer-col">
+          <h4>นักพัฒนา</h4>
+          <a href="https://github.com/Boss.slilelo/NovaAgent-Clean" target="_blank" rel="noopener">GitHub</a>
+          <a href="#">Docs</a>
+          <a href="#">API</a>
+        </div>
+        <div class="footer-col">
+          <h4>ชุมชน</h4>
+          <a href="#">Discord</a>
+          <a href="#">Twitter</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NovaAgent by Boss.slilelo — Built with Boss Minimalist</span>
+        <span>Boss Minimalist v1.0 · Dark Glassmorphism + Neon Pulse</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll สำหรับ nav links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#') {
+          e.preventDefault();
+          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // นับเฉพาะแถว Evolution Log ที่แสดงอยู่ ไม่ใช่จำนวนการเรียนรู้ทั้งหมด
+    const evolutionRows = document.querySelectorAll('#evolution-entries .log-row');
+    const evolutionCount = document.querySelector('#evolution-count');
+    if (evolutionCount) evolutionCount.textContent = String(evolutionRows.length);
+
+    // Neon pulse บน persona card เมื่อ hover
+    const persona = document.querySelector('.persona-card');
+    persona?.addEventListener('mouseenter', () => {
+      persona.style.boxShadow = '0 0 45px rgba(173, 140, 215, 0.35)';
+    });
+    persona?.addEventListener('mouseleave', () => {
+      persona.style.boxShadow = 'var(--shadow-soft)';
+    });
+  </script>
+</body>
+</html>

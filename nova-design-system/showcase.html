@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Design System — Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: var(--nova-bg-950); color: var(--nova-text-primary); }
+    .showcase { max-width: 1100px; margin: 0 auto; padding: var(--nova-space-6); }
+    section { margin-bottom: var(--nova-space-10); }
+    h2 { font-size: var(--nova-text-2xl); margin-bottom: var(--nova-space-4); color: var(--nova-accent-primary); }
+    .grid { display: grid; gap: var(--nova-space-4); }
+    .grid-2 { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .card { background: var(--nova-bg-900); border: 1px solid var(--nova-glass-border); border-radius: var(--nova-radius-lg); padding: var(--nova-space-4); }
+    .color-chip { height: 60px; border-radius: var(--nova-radius-md); margin-bottom: var(--nova-space-2); }
+    .token-row { display: flex; justify-content: space-between; padding: var(--nova-space-2); border-bottom: 1px solid var(--nova-glass-border); }
+    .shadow-demo { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--nova-space-3); }
+    .shadow-box { height: 100px; background: var(--nova-bg-800); border-radius: var(--nova-radius-md); }
+  </style>
+  <link rel="stylesheet" href="nova-tokens.css">
+  <link rel="stylesheet" href="nova-components.css">
+</head>
+<body>
+  <div class="showcase">
+    <h1 style="font-size: var(--nova-text-4xl); margin-bottom: var(--nova-space-2);">Nova Design System</h1>
+    <p style="color: var(--nova-text-tertiary); font-size: var(--nova-text-lg);">Nova Modern Stack — showcase</p>
+
+    <!-- Typography -->
+    <section>
+      <h2>✍️ Typography</h2>
+      <div class="grid">
+        <p style="font-size: var(--nova-text-xs);">xs — The quick brown fox jumps over the lazy dog</p>
+        <p style="font-size: var(--nova-text-sm);">sm — The quick brown fox jumps over the lazy dog</p>
+        <p style="font-size: var(--nova-text-base);">base — The quick brown fox jumps over the lazy dog</p>
+        <p style="font-size: var(--nova-text-lg);">lg — The quick brown fox jumps over the lazy dog</p>
+        <p style="font-size: var(--nova-text-xl);">xl — The quick brown fox jumps over the lazy dog</p>
+        <p style="font-size: var(--nova-text-2xl);">2xl — The quick brown fox jumps over the lazy dog</p>
+        <p style="font-size: var(--nova-text-3xl);">3xl — The quick brown fox jumps over the lazy dog</p>
+        <p style="font-size: var(--nova-text-4xl);">4xl — The quick brown fox jumps over the lazy dog</p>
+      </div>
+    </section>
+
+    <!-- Colors -->
+    <section>
+      <h2>🎨 Colors</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="margin-bottom: var(--nova-space-3);">Deep Space</h3>
+          <div class="color-chip" style="background: var(--nova-bg-950);"></div>
+          <div class="color-chip" style="background: var(--nova-bg-900);"></div>
+          <div class="color-chip" style="background: var(--nova-bg-800);"></div>
+          <div class="color-chip" style="background: var(--nova-bg-700);"></div>
+          <div class="color-chip" style="background: var(--nova-bg-600);"></div>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom: var(--nova-space-3);">Accents</h3>
+          <div class="color-chip" style="background: var(--nova-accent-gradient);"></div>
+          <div class="color-chip" style="background: var(--nova-success);"></div>
+          <div class="color-chip" style="background: var(--nova-warning);"></div>
+          <div class="color-chip" style="background: var(--nova-error);"></div>
+          <div class="color-chip" style="background: var(--nova-info);"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shadows & Radius -->
+    <section>
+      <h2>🔲 Shadows & Radius</h2>
+      <div class="shadow-demo">
+        <div class="shadow-box" style="box-shadow: var(--nova-shadow-sm);"></div>
+        <div class="shadow-box" style="box-shadow: var(--nova-shadow-md);"></div>
+        <div class="shadow-box" style="box-shadow: var(--nova-shadow-lg);"></div>
+        <div class="shadow-box" style="box-shadow: var(--nova-shadow-glow);"></div>
+      </div>
+    </section>
+
+    <!-- Chat Messages -->
+    <section>
+      <h2>💬 Chat Messages</h2>
+      <nova-message class="user" data-avatar="U">
+        <span class="nova-message-content">Hello! Show me a tool card with status.</span>
+      </nova-message>
+      <nova-message class="assistant" data-avatar="A">
+        <span class="nova-message-content">Sure! Here's an example:</span>
+        <nova-tool-card data-status="running">
+          <span class="nova-tool-name">generate_report</span>
+          <nova-tool-progress data-percent="65"></nova-tool-progress>
+          <span class="nova-tool-body">Analyzing data patterns...</span>
+        </nova-tool-card>
+      </nova-message>
+      <nova-tool-card data-status="done">
+        <span class="nova-tool-name">export_csv</span>
+        <nova-tool-progress data-percent="100"></nova-tool-progress>
+        <span class="nova-tool-body">File saved successfully</span>
+      </nova-tool-card>
+      <nova-tool-card data-status="error">
+        <span class="nova-tool-name">upload_image</span>
+        <nova-tool-progress data-percent="40"></nova-tool-progress>
+        <span class="nova-tool-body">Connection timeout</span>
+      </nova-tool-card>
+    </section>
+
+    <!-- Typing & Code -->
+    <section>
+      <h2>⌨️ Typing & Code</h2>
+      <nova-typing-indicator></nova-typing-indicator>
+      <nova-code-block data-lang="python">
+def greet(name):
+    return f"Hello, {name}!"
+print(greet("Nova"))
+      </nova-code-block>
+    </section>
+
+    <!-- Skeleton -->
+    <section>
+      <h2>✨ Skeleton Loader</h2>
+      <nova-skeleton class="image"></nova-skeleton>
+      <nova-skeleton lines="4" widths="['100%', '75%', '100%', '50%']"></nova-skeleton>
+    </section>
+
+    <!-- Buttons & Inputs -->
+    <section>
+      <h2>🎯 Buttons & Inputs</h2>
+      <div style="display: flex; gap: var(--nova-space-3); flex-wrap: wrap;">
+        <button class="nova-button primary">Primary</button>
+        <button class="nova-button secondary">Secondary</button>
+        <button class="nova-button ghost">Ghost</button>
+        <input type="text" placeholder="Type something...">
+        <button class="nova-button primary" onclick="novaToast.success('Saved successfully!', 3000)">Save</button>
+        <button class="nova-button primary" onclick="novaModal.open('<p>Hello from Nova Modal!</p>', {title: 'Modal Title'})">Open Modal</button>
+        <button class="nova-button secondary" onclick="novaToast.error('Oops! Something went wrong.', 3000)">Error Toast</button>
+      </div>
+    </section>
+  </div>
+
+  <link rel="stylesheet" href="nova-ui.js">
+  <script src="nova-ui.js"></script>
+</body>
+</html>

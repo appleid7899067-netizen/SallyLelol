@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="skillhub registration — สลี่ hand-crafted">
+<title>ลงทะเบียนสกิลใหม่ · Skillhub</title>
+<style>
+:root {
+  --bg:#08070c; --bg2:#0e0c16; --violet:#d5c6e0; --violet-dim:#a892b8;
+  --accent:#9b7fd4; --accent2:#6ee7b7; --line:rgba(213,198,224,.12);
+  --glass:rgba(255,255,255,.035); --glass2:rgba(255,255,255,.06);
+  --danger:rgba(239,68,68,.18); --danger-border:rgba(239,68,68,.35);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--violet);font-family:var(--font);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 70% 50% at 15% -5%,rgba(155,127,212,.16),transparent 60%),radial-gradient(ellipse 60% 50% at 95% 105%,rgba(110,231,183,.07),transparent 60%)}
+.wrap{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 26px}
+
+/* HERO */
+.hero{padding:70px 0 30px;text-align:left}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.02em;color:var(--accent2);padding:7px 15px;border-radius:100px;background:rgba(110,231,183,.06);border:1px solid rgba(110,231,183,.22);margin-bottom:24px;cursor:pointer;transition:.22s;text-decoration:none}
+.badge:hover{border-color:rgba(110,231,183,.5);transform:translateY(-1px)}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 0 rgba(110,231,183,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(110,231,183,0)}100%{box-shadow:0 0 0 0 rgba(110,231,183,0)}}
+h1{font-size:clamp(30px,6vw,56px);font-weight:800;line-height:1;letter-spacing:-.035em;margin-bottom:14px;color:#fff}
+h1 em{font-style:normal;background:linear-gradient(105deg,var(--violet) 10%,var(--accent) 55%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lede{font-size:clamp(14px,2vw,16.5px);color:var(--violet-dim);max-width:620px;line-height:1.7}
+.lede strong{color:var(--violet);font-weight:600}
+
+/* GRID LAYOUT */
+.grid{display:grid;grid-template-columns:1.05fr 1fr;gap:28px;margin:30px 0 60px;align-items:start}
+.panel{border-radius:18px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px);overflow:hidden}
+.panel-header{padding:18px 22px;border-bottom:1px solid var(--line);background:var(--glass2)}
+.panel-header h2{font-size:17px;color:#fff;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+.panel-header h2 .num{width:24px;height:24px;border-radius:7px;background:rgba(155,127,212,.18);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.panel-body{padding:22px}
+
+/* FORM */
+.form-group{margin-bottom:18px}
+.form-group label{display:block;font-size:13px;font-weight:600;color:#fff;margin-bottom:7px;letter-spacing:.01em}
+.form-group label .req{color:var(--accent2);margin-left:3px}
+.form-group label .hint{font-weight:400;color:var(--violet-dim);font-size:11.5px;margin-left:8px}
+input[type="text"],input[type="email"],input[type="url"],textarea,select{width:100%;font:inherit;font-size:14px;color:var(--violet);background:var(--glass2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;outline:none;transition:.22s}
+input:focus,textarea:focus,select:focus{border-color:rgba(155,127,212,.55);background:#151220}
+textarea{min-height:90px;resize:vertical;line-height:1.6}
+input.error,textarea.error{border-color:var(--danger-border);background:var(--danger)}
+.error-msg{font-size:11.5px;color:#fca5a5;margin-top:5px;display:none}
+.error-msg.show{display:block}
+.counter{font-size:11px;color:var(--violet-dim);text-align:right;margin-top:5px}
+
+/* SCHEMA FIELD BUILDER */
+.field-builder{border:1px solid var(--line);border-radius:11px;padding:12px;margin-bottom:12px;background:var(--glass2)}
+.field-row{display:grid;grid-template-columns:1.3fr 1fr 1fr auto;gap:9px;margin-bottom:9px}
+.field-row:last-child{margin-bottom:0}
+.field-actions{display:flex;gap:6px;align-items:center}
+.btn-icon{width:30px;height:30px;border-radius:8px;border:1px solid var(--line);background:var(--glass);color:var(--violet);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;font-size:14px}
+.btn-icon:hover{background:var(--glass2);border-color:var(--accent)}
+.btn-icon.danger{color:#fca5a5;border-color:var(--danger-border)}
+.btn-icon.danger:hover{background:var(--danger)}
+.btn-add{width:100%;padding:9px;border-radius:10px;border:1px dashed var(--line);background:transparent;color:var(--violet-dim);cursor:pointer;font-size:13px;transition:.2s}
+.btn-add:hover{border-color:var(--accent);color:var(--accent)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font:inherit;font-size:14px;font-weight:600;cursor:pointer;padding:12px 24px;border-radius:100px;border:none;background:var(--violet);color:#0a0810;transition:.25s;text-decoration:none;white-space:nowrap}
+.btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 34px rgba(213,198,224,.22)}
+.btn.secondary{background:var(--glass2);color:var(--violet);border:1px solid var(--line);box-shadow:none}
+.btn.secondary:hover{background:var(--glass);border-color:var(--accent)}
+.btn.glow{background:linear-gradient(135deg,rgba(110,231,183,.25),rgba(155,127,212,.25));border:1px solid rgba(110,231,183,.4)}
+.btn.glow:hover{background:linear-gradient(135deg,rgba(110,231,183,.4),rgba(155,127,212,.4))}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-row{display:flex;gap:11px;flex-wrap:wrap;margin-top:6px}
+
+/* PREVIEW */
+.preview-block{margin-bottom:16px}
+.preview-block h3{font-size:13px;color:var(--violet-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:.06em}
+.preview-value{font-size:14px;color:#fff}
+.preview-value.empty{color:var(--violet-dim);font-style:italic}
+.preview-name{font-size:20px;font-weight:700;color:#fff;font-family:ui-monospace,'SF Mono',Menlo,monospace}
+.preview-desc{color:var(--violet-dim);margin-top:6px}
+.preview-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.chip{font-size:11.5px;padding:4px 10px;border-radius:100px;background:rgba(155,127,212,.14);border:1px solid rgba(155,127,212,.25);color:var(--violet)}
+.schema-json{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:11.5px;color:var(--violet-dim);white-space:pre-wrap;word-break:break-all}
+
+/* JSON OUTPUT PANEL */
+pre{background:#0b0a10;border:1px solid var(--line);border-radius:11px;padding:15px;overflow-x:auto;margin:10px 0}
+pre code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12px;line-height:1.6;color:var(--violet);background:none;padding:0;border:none}
+.kbd{font-family:ui-monospace,monospace;font-size:11px;background:var(--glass2);border:1px solid var(--line);padding:2px 7px;border-radius:5px}
+
+/* TOAST */
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(100px);background:#1a1626;border:1px solid var(--accent2);color:var(--violet);padding:12px 22px;border-radius:100px;font-size:13.5px;font-weight:600;opacity:0;transition:.35s;z-index:200;box-shadow:0 10px 40px rgba(0,0,0,.4);white-space:nowrap}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* FOOTER NOTE */
+.note{margin-top:40px;padding:18px 22px;border-radius:14px;background:rgba(110,231,183,.05);border:1px solid rgba(110,231,183,.18);font-size:13px;color:var(--violet-dim)}
+.note code{background:rgba(155,127,212,.14);padding:2px 6px;border-radius:5px;color:var(--violet);font-size:11.5px}
+
+@media(max-width:900px){.grid{grid-template-columns:1fr}.panel-body{padding:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <a href="index.html" class="badge">
+      <span class="pulse"></span>
+      ← กลับสู่ Skillhub (88 สกิล)
+    </a>
+    <h1>ลงทะเบียน <em>สกิลใหม่</em></h1>
+    <p class="lede">ฟอร์มสำหรับนักพัฒนาที่ต้องการ <strong>เสนอสกิล/ทูลใหม่</strong> เข้า Skillhub ของสลี่ กรอกข้อมูลด้านล่างแล้วส ลี่จะ generate skeleton code ตาม spec <code>agent.registerTool</code> ของ PI-Desktop ให้พร้อมใช้</p>
+  </div>
+
+  <div class="grid">
+    <!-- FORM PANEL -->
+    <div class="panel">
+      <div class="panel-header">
+        <h2><span class="num">1</span> ข้อมูลสกิล</h2>
+      </div>
+      <div class="panel-body">
+        <form id="skillForm" novalidate>
+          <div class="form-group">
+            <label for="name">ชื่อสกิล (name) <span class="req">*</span></label>
+            <input type="text" id="name" placeholder="เช่น image-generation, slot-game-simulator" maxlength="60" required>
+            <div class="error-msg" id="nameError">กรุณากรอกชื่อสกิล (ตัวพิมพ์เล็ก a-z, ตัวเลข, เครื่องหมายขีดกลาง)</div>
+            <div class="counter"><span id="nameCount">0</span>/60</div>
+          </div>
+
+          <div class="form-group">
+            <label for="category">หมวดหมู่ (category) <span class="req">*</span></label>
+            <select id="category" required>
+              <option value="">— เลือกหมวดหมู่ —</option>
+              <option value="content">Content & Art (สร้างภาพ/วิดีโอ/เสียง)</option>
+              <option value="docs">Documents (Word/PDF/PPT/Spreadsheet)</option>
+              <option value="code">Coding & Engineering (review, TDD, git)</option>
+              <option value="research">Research & Web (search, fetch, browser)</option>
+              <option value="agent">Agent & Memory (knowledge, scheduler, config)</option>
+              <option value="ai">AI Models & Routing (providers, model catalog)</option>
+              <option value="testing">Testing & QA (webapp testing, validation)</option>
+              <option value="utility">Utility & System (file ops, security, helpers)</option>
+              <option value="game">Games & Entertainment</option>
+              <option value="other">Other / ยังไม่แน่ใจ</option>
+            </select>
+            <div class="error-msg" id="categoryError">กรุณาเลือกหมวดหมู่</div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">คำอธิบาย (description) <span class="req">*</span> <span class="hint">1-2 บรรทัด สกิลนี้ทำอะไร ใช้เมื่อไหร่</span></label>
+            <textarea id="description" placeholder="เช่น Generate or edit images from text prompts. Use when the user asks to create, draw, or design visual content." maxlength="400" required></textarea>
+            <div class="error-msg" id="descError">กรุณากรอกคำอธิบาย (อย่างน้อย 15 ตัวอักษร)</div>
+            <div class="counter"><span id="descCount">0</span>/400</div>
+          </div>
+
+          <div class="form-group">
+            <label>Input Schema (JSON Schema) <span class="hint">ฟิลด์ที่สกิลรับเข้าไป</span></label>
+            <div id="fieldBuilder"></div>
+            <button type="button" class="btn-add" id="addFieldBtn">+ เพิ่มฟิลด์</button>
+            <div class="note" style="margin-top:12px">
+              ถ้าสกิลไม่รับ input เลย เว้นว่างไว้ ส ลี่จะสร้าง schema เป็น <code>{ type: 'object', properties: {} }</code> ให้
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="location">ตำแหน่งไฟล์ (location) <span class="req">*</span></label>
+            <input type="text" id="location" placeholder="skills/my-new-skill/SKILL.md" required>
+            <div class="error-msg" id="locationError">กรุณากรอกตำแหน่งไฟล์ (เช่น skills/my-skill/SKILL.md)</div>
+          </div>
+
+          <div class="form-group">
+            <label for="baseDir">โฟลเดอร์หลัก (base_dir)</label>
+            <input type="text" id="baseDir" placeholder="skills/my-new-skill" value="skills/my-new-skill">
+          </div>
+
+          <div class="btn-row">
+            <button type="button" class="btn" id="generateBtn">✨ Generate Skeleton</button>
+            <button type="button" class="btn secondary" id="resetBtn">ล้างฟอร์ม</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- PREVIEW PANEL -->
+    <div class="panel" id="previewPanel">
+      <div class="panel-header">
+        <h2><span class="num">2</span> Preview & Export</h2>
+      </div>
+      <div class="panel-body">
+        <div id="previewEmpty" class="preview-block">
+          <p class="preview-value empty">กรอกข้อมูลด้านซ้ายแล้วกด Generate เพื่อดูตัวอย่าง</p>
+        </div>
+
+        <div id="previewContent" style="display:none">
+          <div class="preview-block">
+            <h3>SKILL.md stub (พร้อม paste)</h3>
+            <pre><code id="skillMdCode"></code></pre>
+            <div class="btn-row">
+              <button class="btn glow" id="copyMdBtn">📋 Copy SKILL.md</button>
+              <button class="btn secondary" id="downloadMdBtn">⬇ Download .md</button>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <h3>Registration snippet (agent.registerTool)</h3>
+            <pre><code id="registerCode"></code></pre>
+            <div class="btn-row">
+              <button class="btn secondary" id="copyRegisterBtn">📋 Copy Snippet</button>
+            </div>
+          </div>
+
+          <div class="preview-block">
+            <h3>Summary</h3>
+            <div class="preview-value preview-name" id="prevName"></div>
+            <div class="preview-desc" id="prevDesc"></div>
+            <div class="preview-meta" id="prevMeta"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>💡 เคล็ดลับ:</strong> สกิลที่ดีควรบอกให้ชัดว่า <em>"ทำอะไร"</em> และ <em>"ใช้เมื่อไหร่"</em> — ดูตัวอย่างจาก 88 สกิลใน <a href="index.html" style="color:var(--accent);text-decoration:none">Skillhub</a> ได้เลย หลัง generate แล้วนำไปวางในโฟลเดอร์ที่เหมาะสม อย่าลืมอัปเดต skill index / catalog ด้วยนะ
+  </div>
+
+  <footer style="padding:30px 0 46px;text-align:center;font-size:12.5px;color:rgba(168,146,184,.6);border-top:1px solid var(--line);margin-top:30px">
+    สร้างด้วย ❤️ โดย สลี่ · Skillhub Registration Tool
+  </footer>
+
+</div>
+
+<div class="toast" id="toast">คัดลอกแล้ว!</div>
+
+<script>
+/* ===== STATE ===== */
+const FIELDS = []; // { name, type, description, required }
+const TYPE_OPTIONS = {
+  string: 'Text / คำอธิบาย',
+  number: 'Number / ตัวเลข',
+  boolean: 'Boolean / ใช่-ไม่ใช่',
+  array: 'Array / รายการ',
+  object: 'Object / โครงสร้าง',
+  enum: 'Enum / เลือกจากตัวเลือก'
+};
+
+/* ===== ELEMENTS ===== */
+const form = document.getElementById('skillForm');
+const nameInput = document.getElementById('name');
+const categoryInput = document.getElementById('category');
+const descInput = document.getElementById('description');
+const locationInput = document.getElementById('location');
+const baseDirInput = document.getElementById('baseDir');
+const fieldBuilder = document.getElementById('fieldBuilder');
+const addFieldBtn = document.getElementById('addFieldBtn');
+const generateBtn = document.getElementById('generateBtn');
+const resetBtn = document.getElementById('resetBtn');
+const previewEmpty = document.getElementById('previewEmpty');
+const previewContent = document.getElementById('previewContent');
+const skillMdCode = document.getElementById('skillMdCode');
+const registerCode = document.getElementById('registerCode');
+const prevName = document.getElementById('prevName');
+const prevDesc = document.getElementById('prevDesc');
+const prevMeta = document.getElementById('prevMeta');
+const toast = document.getElementById('toast');
+
+/* ===== HELPERS ===== */
+const escapeHtml = (s) => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const nameValid = (v) => /^[a-z0-9][a-z0-9-]*$/.test(v);
+
+function showToast(msg){
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'), 2200);
+}
+
+function showError(id, show){
+  const el = document.getElementById(id+'Error');
+  const input = document.getElementById(id);
+  if(show){ el.classList.add('show'); input.classList.add('error'); }
+  else { el.classList.remove('show'); input.classList.remove('error'); }
+}
+
+/* ===== FIELD BUILDER ===== */
+function renderFields(){
+  fieldBuilder.innerHTML = '';
+  FIELDS.forEach((f, i) => {
+    const div = document.createElement('div');
+    div.className = 'field-builder';
+    div.innerHTML = `
+      <div class="field-row">
+        <input type="text" placeholder="ชื่อฟิลด์ (เช่น image_path)" value="${escapeHtml(f.name)}" data-idx="${i}" data-prop="name" class="field-name">
+        <select data-idx="${i}" data-prop="type" class="field-type">
+          ${Object.entries(TYPE_OPTIONS).map(([k,v]) => `<option value="${k}"${k===f.type?' selected':''}>${v}</option>`).join('')}
+        </select>
+        <select data-idx="${i}" data-prop="required" class="field-req">
+          <option value="false"${!f.required?' selected':''}>Optional</option>
+          <option value="true"${f.required?' selected':''}>Required</option>
+        </select>
+        <div class="field-actions">
+          <button class="btn-icon danger" onclick="removeField(${i})" title="ลบฟิลด์">✕</button>
+        </div>
+      </div>
+      <div class="field-row">
+        <input type="text" placeholder="คำอธิบายฟิลด์ (เช่น Path ของรูปต้นฉบับ)" value="${escapeHtml(f.description)}" data-idx="${i}" data-prop="description" class="field-desc" style="grid-column:1/-1">
+      </div>
+    `;
+    fieldBuilder.appendChild(div);
+  });
+  fieldBuilder.querySelectorAll('input,select').forEach(el => {
+    el.addEventListener('change', (e) => {
+      const i = +e.target.dataset.idx, p = e.target.dataset.prop;
+      FIELDS[i][p] = p==='required' ? e.target.value==='true' : e.target.value;
+      generate();
+    });
+  });
+}
+
+window.removeField = (i) => { FIELDS.splice(i,1); renderFields(); generate(); };
+
+addFieldBtn.addEventListener('click', () => {
+  FIELDS.push({ name:'', type:'string', description:'', required:false });
+  renderFields();
+});
+
+/* ===== COUNTERS ===== */
+nameInput.addEventListener('input', () => {
+  document.getElementById('nameCount').textContent = nameInput.value.length;
+  showError('name', !nameValid(nameInput.value) && nameInput.value.length>0);
+});
+descInput.addEventListener('input', () => {
+  document.getElementById('descCount').textContent = descInput.value.length;
+  showError('desc', descInput.value.trim().length>0 && descInput.value.trim().length<15);
+});
+
+/* ===== GENERATE ===== */
+function buildSchema(){
+  if(FIELDS.length===0) return { type:'object', properties:{} };
+  const props = {}, required = [];
+  FIELDS.forEach(f => {
+    if(!f.name.trim()) return;
+    const def = { type: f.type, description: f.description };
+    if(f.type==='array') def.items = { type:'string' };
+    props[f.name.trim()] = def;
+    if(f.required) required.push(f.name.trim());
+  });
+  const schema = { type:'object', properties: props };
+  if(required.length) schema.required = required;
+  return schema;
+}
+
+function generate(){
+  const name = nameInput.value.trim();
+  const category = categoryInput.value;
+  const desc = descInput.value.trim();
+  const location = locationInput.value.trim();
+  const baseDir = baseDirInput.value.trim();
+
+  let valid = true;
+  if(!name){ showError('name', true); valid=false; } else showError('name', !nameValid(name));
+  if(!category){ showError('category', true); valid=false; } else showError('category', false);
+  if(desc.length<15){ showError('desc', true); valid=false; } else showError('desc', false);
+  if(!location){ showError('location', true); valid=false; } else showError('location', false);
+
+  const schema = buildSchema();
+  const date = new Date().toISOString().slice(0,10);
+
+  // --- SKILL.md ---
+  const md = `<skill>
+  <name>${name}</name>
+  <description>"${desc}"</description>
+  <location>/path/to/skills/${name}/SKILL.md</location>
+  <base_dir>/path/to/skills/${name}</base_dir>
+</skill>
+
+# ${name.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())} — ${category}
+
+## เมื่อไหร่ควรใช้สกิลนี้
+${desc} ใช้เมื่อ${category==='code'?'บอสพูดถึงการ review โค้ด, เขียน test, หรือจัดการ git':category==='content'?'บอสต้องการสร้างหรือแก้ไขภาพ/วิดีโอ/เสียง':category==='docs'?'บอสต้องการสร้าง อ่าน หรือแก้ไขเอกสาร (Word/PDF/PPT/Spreadsheet)':category==='research'?'บอสต้องการค้นหาข้อมูลจากเว็บหรืออ่านบทความออนไลน์':category==='agent'?'บอสต้องการจัดการ memory, ความรู้, หรือตารางงาน':category==='ai'?'บอสต้องการเลือกหรือสลับโมเดล AI / provider':category==='testing'?'บอสต้องการทดสอบเว็บแอปหรือตรวจสอบ UI':category==='game'?'บอสต้องการเล่นเกมหรือจำลองสถานการณ์':category==='utility'?'บอสต้องการเครื่องมือช่วยงานทั่วไปหรือจัดการระบบ':'บอสต้องการความสามารถที่ตรงกับคำอธิบายด้านบน'}
+
+## วิธีใช้ (สำหรับนักพัฒนา)
+1. เปิดฟอร์มลงทะเบียนสกิลใน Skillhub
+2. กรอกข้อมูลและ generate skeleton
+3. นำ SKILL.md ไปวางในโฟลเดอร์ที่เหมาะสม แล้วอัปเดต index
+
+## ข้อควรระวัง
+- อย่าใช้สกิลนี้กับงานที่${category==='ai'?'ไม่เกี่ยวกับโมเดล/การ routing':category==='docs'?'ไม่เกี่ยวกับเอกสาร':category==='content'?'ไม่เกี่ยวกับการสร้างสื่อ':category==='game'?'ไม่เกี่ยวกับความบันเทิง':'ไม่ตรงกับขอบเขตที่ระบุไว้'}
+- ตรวจสอบ input ก่อนดำเนินการเสมอ`;
+
+  // --- register snippet ---
+  const propsCode = Object.keys(schema.properties).length===0
+    ? 'properties: {}'
+    : 'properties: {\n      ' + Object.entries(schema.properties).map(([k,v]) => `${k}: { type: '${v.type}', description: '${v.description.replace(/'/g,"\\'")}' }`).join(',\n      ') + '\n    }';
+  const reqCode = schema.required ? `,\n    required: ${JSON.stringify(schema.required)}` : '';
+
+  const reg = `// 1. นิยาม tool
+const toolDef = {
+  name: '${name}',
+  description: '${desc.replace(/'/g,"\\'")}',
+  inputSchema: {
+    type: 'object',
+    ${propsCode}${reqCode}
+  }
+};
+
+// 2. Handler — logic จริงอยู่ตรงนี้
+async function ${name.replace(/-/g,'_')}(input, context) {
+  // TODO: ใส่ logic ของสกิล
+  // input = parsed & validated ตาม inputSchema
+  // context = tools, memory, config, ...
+  return { ok: true, data: null };
+}
+
+// 3. ลงทะเบียนกับ agent
+const handle = agent.registerTool(toolDef, ${name.replace(/-/g,'_')});
+
+// 4. (ถ้าต้องการ) ยกเลิก registration
+// handle.unregister();`;
+
+  skillMdCode.textContent = md;
+  registerCode.textContent = reg;
+  prevName.textContent = name || '—';
+  prevDesc.textContent = desc || '—';
+  prevMeta.innerHTML = category
+    ? `<span class="chip">📁 ${category}</span><span class="chip">📍 ${location}</span><span class="chip">🧩 ${Object.keys(schema.properties).length} input fields</span>`
+    : '';
+
+  previewEmpty.style.display = 'none';
+  previewContent.style.display = 'block';
+}
+
+/* ===== CLIPBOARD / DOWNLOAD ===== */
+async function copyText(text, msg){
+  try {
+    await navigator.clipboard.writeText(text);
+    showToast(msg);
+  } catch {
+    showToast('คัดลอกไม่ได้นะคะ ลอง select เอง');
+  }
+}
+
+document.getElementById('copyMdBtn').addEventListener('click', () =>
+  copyText(skillMdCode.textContent, 'คัดลอก SKILL.md แล้ว!'));
+document.getElementById('copyRegisterBtn').addEventListener('click', () =>
+  copyText(registerCode.textContent, 'คัดลอก snippet แล้ว!'));
+document.getElementById('downloadMdBtn').addEventListener('click', () => {
+  const name = nameInput.value.trim() || 'new-skill';
+  const blob = new Blob([skillMdCode.textContent], {type:'text/markdown'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = `${name}-SKILL.md`;
+  a.click(); URL.revokeObjectURL(url);
+  showToast('เริ่มดาวน์โหลดแล้ว!');
+});
+
+resetBtn.addEventListener('click', () => {
+  form.reset(); FIELDS.length=0; renderFields();
+  ['name','category','desc','location'].forEach(id=>showError(id,false));
+  document.getElementById('nameCount').textContent='0';
+  document.getElementById('descCount').textContent='0';
+  previewEmpty.style.display='block';
+  previewContent.style.display='none';
+});
+
+generateBtn.addEventListener('click', generate);
+
+/* Autofill base_dir from location */
+locationInput.addEventListener('input', () => {
+  const v = locationInput.value;
+  if(v.endsWith('/SKILL.md')) baseDirInput.value = v.slice(0,-9);
+});
+</script>
+</body>
+</html>

@@ -1,15 +1,15 @@
 {
-  "sessions": {
-    "default::session_b4caa699-f036-4adf-8a4d-4db5cf2fc4df": {
-      "path": "/data/data/com.termux/files/home/NovaAgent-Clean",
-      "ts": 1792407663.3221543
-    }
-  },
+  "sessions": {},
   "recents": [
     {
       "path": "/data/data/com.termux/files/home/NovaAgent-Clean",
       "name": "NovaAgent-Clean",
-      "ts": 1792407663.3222046
+      "ts": 1792609223.883506
+    },
+    {
+      "path": "/data/data/com.termux/files/usr",
+      "name": "usr",
+      "ts": 1792608458.4695535
     }
   ],
   "meta": {},

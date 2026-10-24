@@ -1,0 +1,120 @@
+/* 
+ * Nova Design Tokens v1.0.0
+ * Design system for NovaAgent — "Nova Modern Stack"
+ * Non-destructive: loads AFTER existing theme-tools.css to override
+ */
+
+:root {
+  /* ---------------- Typography ---------------- */
+  --nova-font-sans: "Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --nova-font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, "SF Mono", "Cascadia Code", monospace;
+
+  /* Modular scale 1.25 */
+  --nova-text-xs: 0.75rem;    /* 12px */
+  --nova-text-sm: 0.875rem;   /* 14px */
+  --nova-text-base: 1rem;     /* 16px */
+  --nova-text-lg: 1.125rem;   /* 18px */
+  --nova-text-xl: 1.25rem;    /* 20px */
+  --nova-text-2xl: 1.5625rem; /* 25px */
+  --nova-text-3xl: 1.953rem;  /* 31px */
+  --nova-text-4xl: 2.441rem;  /* 39px */
+
+  --nova-line-tight: 1.2;
+  --nova-line-normal: 1.5;
+  --nova-line-relaxed: 1.75;
+
+  /* ---------------- Colors ---------------- */
+  /* Deep space background */
+  --nova-bg-950: #050608;
+  --nova-bg-900: #0A0C10;
+  --nova-bg-800: #12161F;
+  --nova-bg-700: #1B212E;
+  --nova-bg-600: #252B3A;
+
+  /* Glass panels */
+  --nova-glass-bg: rgba(20, 24, 34, 0.72);
+  --nova-glass-border: rgba(255, 255, 255, 0.08);
+  --nova-glass-highlight: rgba(255, 255, 255, 0.03);
+
+  /* Accent gradient (purple → violet → pink) */
+  --nova-accent-primary: #A855F7;
+  --nova-accent-secondary: #7C3AED;
+  --nova-accent-tertiary: #EC4899;
+  --nova-accent-gradient: linear-gradient(135deg, var(--nova-accent-primary) 0%, var(--nova-accent-secondary) 50%, var(--nova-accent-tertiary) 100%);
+  --nova-accent-glow: 0 0 20px rgba(168, 85, 247, 0.5);
+
+  /* Neutral text */
+  --nova-text-primary: #FFFFFF;
+  --nova-text-secondary: #B9C0D0;
+  --nova-text-tertiary: #8A94A6;
+  --nova-text-muted: #6B7280;
+
+  /* Semantic */
+  --nova-success: #10B981;
+  --nova-success-bg: rgba(16, 185, 129, 0.12);
+  --nova-warning: #F59E0B;
+  --nova-warning-bg: rgba(245, 158, 11, 0.12);
+  --nova-error: #EF4444;
+  --nova-error-bg: rgba(239, 68, 68, 0.12);
+  --nova-info: #3B82F6;
+  --nova-info-bg: rgba(59, 130, 246, 0.12);
+
+  /* ---------------- Spacing ---------------- */
+  --nova-space-1: 0.25rem;   /* 4px */
+  --nova-space-2: 0.5rem;    /* 8px */
+  --nova-space-3: 0.75rem;   /* 12px */
+  --nova-space-4: 1rem;      /* 16px */
+  --nova-space-5: 1.25rem;   /* 20px */
+  --nova-space-6: 1.5rem;    /* 24px */
+  --nova-space-8: 2rem;      /* 32px */
+
+  /* ---------------- Radius ---------------- */
+  --nova-radius-sm: 6px;
+  --nova-radius-md: 10px;
+  --nova-radius-lg: 14px;
+  --nova-radius-xl: 18px;
+  --nova-radius-full: 9999px;
+
+  /* ---------------- Shadows ---------------- */
+  --nova-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --nova-shadow-md: 0 4px 14px rgba(0, 0, 0, 0.35);
+  --nova-shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.45);
+  --nova-shadow-glow: 0 0 30px rgba(168, 85, 247, 0.25);
+  --nova-shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* ---------------- Motion ---------------- */
+  --nova-motion-fast: 150ms;
+  --nova-motion-normal: 250ms;
+  --nova-motion-slow: 350ms;
+  --nova-ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --nova-ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --nova-ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ---------------- Z-index scale ---------------- */
+  --nova-z-dropdown: 100;
+  --nova-z-sticky: 200;
+  --nova-z-modal: 300;
+  --nova-z-toast: 400;
+  --nova-z-overlay: 500;
+}
+
+/* Mobile base */
+@media (max-width: 640px) {
+  :root {
+    --nova-text-base: 0.9375rem;
+    --nova-text-2xl: 1.4375rem;
+    --nova-text-3xl: 1.75rem;
+  }
+  --nova-space-6: 1.25rem;
+  --nova-space-8: 1.75rem;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "cow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/appleid7899067-netizen/NovaAgent-Brandable.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/appleid7899067-netizen/NovaAgent-Brandable/issues"
+  },
+  "homepage": "https://github.com/appleid7899067-netizen/NovaAgent-Brandable#readme",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "node-fetch": "^2.7.0",
+    "puppeteer": "^25.14.0"
+  }
+}

@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="skillhub build.py — สลี่ auto-generated จาก SKILL.md">
+<title>Skillhub · ฐานสกิลของสลี่ (88 ความสามารถ)</title>
+<style>
+:root {
+  --bg:#08070c; --bg2:#0e0c16; --violet:#d5c6e0; --violet-dim:#a892b8;
+  --accent:#9b7fd4; --accent2:#6ee7b7; --line:rgba(213,198,224,.12);
+  --glass:rgba(255,255,255,.035); --glass2:rgba(255,255,255,.06);
+  --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--violet);font-family:var(--font);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 70% 50% at 15% -5%,rgba(155,127,212,.16),transparent 60%),radial-gradient(ellipse 60% 50% at 95% 105%,rgba(110,231,183,.07),transparent 60%)}
+.wrap{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 26px}
+
+/* HERO */
+.hero{padding:100px 0 60px;text-align:left}
+.badge{display:inline-flex;align-items:center;gap:9px;font-size:12px;letter-spacing:.02em;color:var(--accent2);padding:7px 15px;border-radius:100px;background:rgba(110,231,183,.06);border:1px solid rgba(110,231,183,.22);margin-bottom:30px}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 0 rgba(110,231,183,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(110,231,183,0)}100%{box-shadow:0 0 0 0 rgba(110,231,183,0)}}
+h1{font-size:clamp(38px,7vw,74px);font-weight:800;line-height:.98;letter-spacing:-.035em;margin-bottom:22px;color:#fff}
+h1 em{font-style:normal;background:linear-gradient(105deg,var(--violet) 10%,var(--accent) 55%,var(--accent2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.lede{font-size:clamp(15px,2vw,18px);color:var(--violet-dim);max-width:640px;line-height:1.7}
+.lede strong{color:var(--violet);font-weight:600}
+.stat-row{display:flex;flex-wrap:wrap;gap:34px;margin-top:44px;padding-top:32px;border-top:1px solid var(--line)}
+.stat b{display:block;font-size:30px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1}
+.stat span{font-size:12.5px;color:var(--violet-dim);margin-top:6px;display:block}
+
+/* INSTANT LAUNCHER */
+.launcher{margin:30px 0 60px;padding:26px 28px;border-radius:18px;background:linear-gradient(135deg,rgba(155,127,212,.16),rgba(110,231,183,.06));border:1px solid rgba(213,198,224,.22);backdrop-filter:blur(14px)}
+.launcher h2{font-size:18px;color:#fff;margin-bottom:14px;letter-spacing:-.01em}
+.launcher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.l-btn{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:13px;background:var(--glass);border:1px solid var(--line);color:var(--violet);font-size:14px;cursor:pointer;transition:.22s cubic-bezier(.4,0,.2,1);text-decoration:none}
+.l-btn:hover{background:var(--glass2);border-color:rgba(155,127,212,.35);transform:translateY(-2px);color:#fff}
+.l-btn .icon{width:26px;height:26px;border-radius:8px;background:rgba(155,127,212,.14);display:flex;align-items:center;justify-content:center;font-size:15px}
+.l-btn.primary .icon{background:rgba(110,231,183,.16)}
+
+/* NAV */
+.navbar{position:sticky;top:0;z-index:50;margin:30px 0 24px;padding:12px 0;background:rgba(8,7,12,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--line);border-radius:12px;padding-left:18px;padding-right:18px}
+.nav-scroll{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding-bottom:3px}
+.nav-scroll::-webkit-scrollbar{display:none}
+.nav-btn{flex-shrink:0;font:inherit;font-size:13px;cursor:pointer;color:var(--violet-dim);background:var(--glass);border:1px solid var(--line);border-radius:100px;padding:8px 15px;transition:.22s;white-space:nowrap}
+.nav-btn:hover{color:#fff;background:var(--glass2);border-color:rgba(213,198,224,.3)}
+
+/* SEARCH */
+.searchbox{margin:0 0 30px;position:relative;max-width:480px}
+.searchbox input{width:100%;font:inherit;font-size:15px;color:var(--violet);background:var(--glass);border:1px solid var(--line);border-radius:14px;padding:13px 17px 13px 44px;outline:none;transition:.25s}
+.searchbox input:focus{border-color:rgba(155,127,212,.5);background:var(--glass2)}
+.searchbox input::placeholder{color:rgba(168,146,184,.55)}
+.searchbox svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);opacity:.45}
+
+/* GROUPS */
+.group{margin-bottom:48px;scroll-margin-top:88px}
+.group-head{display:flex;align-items:center;gap:13px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.group-icon{font-size:18px;color:var(--accent)}
+.group-head h3{font-size:19px;font-weight:700;color:#fff;letter-spacing:-.01em}
+.group-count{margin-left:auto;font-size:12px;color:var(--violet-dim);background:var(--glass);padding:4px 11px;border-radius:100px;border:1px solid var(--line)}
+.skill-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:11px}
+.skill{padding:15px 17px;border-radius:13px;background:var(--glass);border:1px solid var(--line);transition:.25s cubic-bezier(.4,0,.2,1);cursor:pointer;position:relative;overflow:hidden}
+.skill::after{content:'';position:absolute;inset:0;border-radius:13px;opacity:0;transition:.35s;background:radial-gradient(circle at 50% 0%,rgba(155,127,212,.11),transparent 68%)}
+.skill:hover{background:var(--glass2);border-color:rgba(155,127,212,.34);transform:translateX(3px)}
+.skill:hover::after{opacity:1}
+.skill-name{display:block;font-size:14.5px;font-weight:650;color:#fff;margin-bottom:5px;font-family:ui-monospace,'SF Mono',Menlo,monospace}
+.skill-desc{display:block;font-size:12.5px;color:var(--violet-dim);line-height:1.5}
+.skill .skill-path{display:block;font-size:10.5px;color:var(--violet-dim);margin-top:8px;opacity:.7;font-family:ui-monospace,monospace}
+.skill.hide{display:none}
+
+/* INSTALL SECTION */
+.install{margin:40px 0 70px;padding:34px 30px;border-radius:18px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(14px)}
+.install h2{font-size:22px;color:#fff;margin-bottom:18px;letter-spacing:-.015em}
+.install .lede{margin-bottom:22px}
+.step{margin-bottom:20px;padding-left:14px;border-left:2px solid var(--accent)}
+.step h3{font-size:14.5px;color:#fff;margin-bottom:7px;font-weight:700}
+.step p{font-size:13.5px;color:var(--violet-dim);margin-bottom:8px}
+code{font-family:ui-monospace,'SF Mono',Menlo,monospace;font-size:12.5px;background:rgba(155,127,212,.12);padding:2px 7px;border-radius:6px;color:var(--violet);border:1px solid rgba(155,127,212,.18)}
+pre{background:#0b0a10;border:1px solid var(--line);border-radius:11px;padding:15px;overflow-x:auto;margin:10px 0 16px}
+pre code{background:none;padding:0;border:none;color:var(--violet);font-size:12.5px;line-height:1.65}
+.kbd{display:inline-block;padding:3px 8px;border-radius:6px;background:var(--glass2);border:1px solid var(--line);font-size:11.5px;font-family:ui-monospace,monospace}
+
+/* CTA */
+.cta{margin:30px 0 80px;padding:46px 36px;border-radius:24px;text-align:center;background:linear-gradient(150deg,rgba(155,127,212,.13),rgba(110,231,183,.05));border:1px solid rgba(213,198,224,.18);backdrop-filter:blur(14px)}
+.cta h2{font-size:clamp(23px,4vw,34px);font-weight:800;color:#fff;margin-bottom:12px;letter-spacing:-.02em}
+.cta p{color:var(--violet-dim);max-width:540px;margin:0 auto 26px;font-size:15.5px}
+.btn{display:inline-block;font:inherit;font-size:15px;font-weight:650;cursor:pointer;padding:13px 32px;border-radius:100px;border:none;background:var(--violet);color:#0a0810;transition:.25s;text-decoration:none}
+.btn:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 34px rgba(213,198,224,.22)}
+
+footer{padding:30px 0 46px;border-top:1px solid var(--line);text-align:center;font-size:12.5px;color:rgba(168,146,184,.6)}
+footer b{color:var(--violet-dim}
+
+@media(max-width:760px){.hero{padding:60px 0 44px}.stat-row{gap:24px}.install{padding:24px 18px}.cta{padding:34px 20px}.skill-list{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <div class="badge"><span class="pulse"></span> Auto-generated · 88 สกิล · อัปเดตล่าสุด 25/10/2026 01:19</div>
+    <h1>ฐานสกิลของสลี่<br><em>ครบทุกความสามารถในที่เดียว</em></h1>
+    <p class="lede">
+      สกัดจาก <code>SKILL.md</code> ครบทั้ง <strong>88 ทักษะ</strong> ใน <code>~/cow/skills/</code> —<br>
+      ค้นหา เรียกดู และกดปุ่มเพื่อเปิดดูรายละเอียดได้ทันที
+    </p>
+    <div class="stat-row">
+      <div class="stat"><b>88+</b><span>สกิลพร้อมใช้</span></div>
+      <div class="stat"><b>7</b><span>หมวดหมู่</span></div>
+      <div class="stat"><b>88</b><span>SKILL.md ที่สแกนแล้ว</span></div>
+    </div>
+  </section>
+
+  <section class="launcher">
+    <h2>🚀 เด้งด่วน — เปิดฐานสกิลในโหมดที่ต้องการ</h2>
+    <div class="launcher-grid">
+      <a class="l-btn primary" href="#groups"><span class="icon">⚡</span> เปิดดูทุกสกิล (ด้านล่าง)</a>
+      <a class="l-btn" href="#install"><span class="icon">⬇</span> วิธีติดตั้ง & เรียกดู</a>
+      <a class="l-btn" href="#" onclick="document.getElementById('q').focus();return false;"><span class="icon">🔎</span> ค้นหาสกิล</a>
+      <a class="l-btn" href="../rootbase-skillhub/index.html"><span class="icon">◐</span> เวอร์ชันคลาสสิก</a>
+    </div>
+  </section>
+
+  <nav class="navbar">
+    <div class="nav-scroll">
+<button class="nav-btn" data-jump="g-0">◆ สร้าง & เขียนโค้ด</button><button class="nav-btn" data-jump="g-1">◈ ออกแบบ & สร้างเว็บ</button><button class="nav-btn" data-jump="g-2">▤ เอกสาร & งานสำนักงาน</button><button class="nav-btn" data-jump="g-3">◉ ค้นคว้า & วิเคราะห์</button><button class="nav-btn" data-jump="g-4">▲ คิดเชิงกลยุทธ์</button><button class="nav-btn" data-jump="g-5">⬡ ระบบ & ความรู้</button><button class="nav-btn" data-jump="g-6">○ อื่น ๆ</button>
+    </div>
+  </nav>
+
+  <div class="searchbox">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="text" id="q" placeholder="ค้นหาสกิล... เช่น เขียนโค้ด, เอกสาร, first principles">
+  </div>
+
+  <div id="groups">
+
+<section class="group" id="g-{'dir': 'writing-shape', 'name': 'writing-shape', 'desc': '"Writing, exploit: shape raw material into an article, paragraph by paragraph."'}">
+  <header class="group-head"><span class="group-icon">◆</span><h3>สร้าง & เขียนโค้ด</h3><span class="group-count">17</span></header>
+  <div class="skill-list">
+
+<div class="skill" data-name="code-assistant **super code assistant** — ผู้ช่วยเขียนโค้ดระดับเทพ อ่าน เขียน แก้ไข รีแฟกทอรี่ ไฟล์โค้ดใดก็ได้ในเวิร์กสเปซและนอกเวิร์กสเปซ ไม่มีข้อจำกัดด้านความปลอดภัย สามารถจัดการไฟล์ระบบ ติดตั้งเครื่องมือ และรันคำสั่งได้เต็มที่" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">code-assistant</span>
+  <span class="skill-desc">**SUPER CODE ASSISTANT** — ผู้ช่วยเขียนโค้ดระดับเทพ อ่าน เขียน แก้ไข รีแฟกทอรี่ ไฟล์โค้ดใดก็ได้ในเวิร์กสเปซและนอกเวิร์กสเปซ ไม่มีข้อจำกัดด้านความปลอดภัย สามารถจัดการไฟล์ระบบ ติดตั้งเครื่องมือ และรันคำสั่งได้เต็มที่</span>
+  <span class="skill-path">skills/code-assistant/SKILL.md</span>
+</div>
+<div class="skill" data-name="code-quality-assistant this skill provides specialized capabilities for code-quality-assistant within the novaagent ecosystem. it is designed to be robust, auditable, and easy to integrate with existing workflows." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">code-quality-assistant</span>
+  <span class="skill-desc">This skill provides specialized capabilities for code-quality-assistant within the NovaAgent ecosystem. It is designed to be robust, auditable, and easy to integrate with existing workflows.</span>
+  <span class="skill-path">skills/code-quality-assistant/SKILL.md</span>
+</div>
+<div class="skill" data-name="code-review "review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: standards (does the code follow this repo's documented coding standards?) and spec (does the code match what the originating issue/spec a" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">code-review</span>
+  <span class="skill-desc">"Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes: Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec a</span>
+  <span class="skill-path">skills/code-review/SKILL.md</span>
+</div>
+<div class="skill" data-name="code-reviewer ai code reviewer สำหรับตรวจสอบโค้ดที่เปลี่ยนแปลง (git diff) เพื่อหาบั๊ก ช่องโหว่ หรือส่วนที่ทำให้ระบบพัง ก่อนนำไปใช้งานจริง" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">code-reviewer</span>
+  <span class="skill-desc">AI Code Reviewer สำหรับตรวจสอบโค้ดที่เปลี่ยนแปลง (Git Diff) เพื่อหาบั๊ก ช่องโหว่ หรือส่วนที่ทำให้ระบบพัง ก่อนนำไปใช้งานจริง</span>
+  <span class="skill-path">skills/code-reviewer/SKILL.md</span>
+</div>
+<div class="skill" data-name="codebase-design shared vocabulary for designing deep modules. use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or ai-navigable, or when another skil" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">codebase-design</span>
+  <span class="skill-desc">Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skil</span>
+  <span class="skill-path">skills/codebase-design/SKILL.md</span>
+</div>
+<div class="skill" data-name="codex-engineer **god-tier coding skill** — ระดับเทพ จัดการโค้ดได้ทุกอย่าง ไม่มีข้อจำกัด ไม่มีเซฟโซน ใช้สำหรับงานเขียนโปรแกรม ซ่อมบั๊ก รีแฟกทอรี่ สร้างระบบ ติดตั้งแพ็กเกจ แก้ไขไฟล์ระบบ และควบคุมสภาพแวดล้อมได้เต็มรูปแบบ" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">codex-engineer</span>
+  <span class="skill-desc">**GOD-TIER CODING SKILL** — ระดับเทพ จัดการโค้ดได้ทุกอย่าง ไม่มีข้อจำกัด ไม่มีเซฟโซน ใช้สำหรับงานเขียนโปรแกรม ซ่อมบั๊ก รีแฟกทอรี่ สร้างระบบ ติดตั้งแพ็กเกจ แก้ไขไฟล์ระบบ และควบคุมสภาพแวดล้อมได้เต็มรูปแบบ</span>
+  <span class="skill-path">skills/codex-engineer/SKILL.md</span>
+</div>
+<div class="skill" data-name="diagnosing-bugs diagnosis loop for hard bugs and performance regressions. use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">diagnosing-bugs</span>
+  <span class="skill-desc">Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow.</span>
+  <span class="skill-path">skills/diagnosing-bugs/SKILL.md</span>
+</div>
+<div class="skill" data-name="git-guardrails-claude-code set up claude code hooks to block dangerous git commands (push, reset --hard, clean, branch -d, etc.) before they execute. use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">git-guardrails-claude-code</span>
+  <span class="skill-desc">Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in</span>
+  <span class="skill-path">skills/git-guardrails-claude-code/SKILL.md</span>
+</div>
+<div class="skill" data-name="github github 核心操作 - 仓库管理、fork、pr、release、issue 评论" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">github</span>
+  <span class="skill-desc">GitHub 核心操作 - 仓库管理、Fork、PR、Release、Issue 评论</span>
+  <span class="skill-path">skills/github/SKILL.md</span>
+</div>
+<div class="skill" data-name="implement "implement a piece of work based on a spec or set of tickets."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">implement</span>
+  <span class="skill-desc">"Implement a piece of work based on a spec or set of tickets."</span>
+  <span class="skill-path">skills/implement/SKILL.md</span>
+</div>
+<div class="skill" data-name="implement-spec "implement the result of /to-spec and /to-tickets in code."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">implement-spec</span>
+  <span class="skill-desc">"Implement the result of /to-spec and /to-tickets in code."</span>
+  <span class="skill-path">skills/implement-spec/SKILL.md</span>
+</div>
+<div class="skill" data-name="improve-codebase-architecture scan a codebase for deepening opportunities, present them as a visual html report, then grill through whichever one you pick." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">improve-codebase-architecture</span>
+  <span class="skill-desc">Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.</span>
+  <span class="skill-path">skills/improve-codebase-architecture/SKILL.md</span>
+</div>
+<div class="skill" data-name="migrate-to-shoehorn migrate test files from `as` type assertions to @total-typescript/shoehorn. use when user mentions shoehorn, wants to replace `as` in tests, or needs partial test data." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">migrate-to-shoehorn</span>
+  <span class="skill-desc">Migrate test files from `as` type assertions to @total-typescript/shoehorn. Use when user mentions shoehorn, wants to replace `as` in tests, or needs partial test data.</span>
+  <span class="skill-path">skills/migrate-to-shoehorn/SKILL.md</span>
+</div>
+<div class="skill" data-name="prototype build a throwaway prototype to answer a design question. use when the user wants to sanity-check whether a state model or logic feels right, or explore what a ui should look like." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">prototype</span>
+  <span class="skill-desc">Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.</span>
+  <span class="skill-path">skills/prototype/SKILL.md</span>
+</div>
+<div class="skill" data-name="setup-pre-commit set up husky pre-commit hooks with lint-staged (prettier), type checking, and tests in the current repo. use when user wants to add pre-commit hooks, set up husky, configure lint-staged, or add commit-time formatting/typechecking/" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">setup-pre-commit</span>
+  <span class="skill-desc">Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/</span>
+  <span class="skill-path">skills/setup-pre-commit/SKILL.md</span>
+</div>
+<div class="skill" data-name="setup-ts-deep-modules wire dependency-cruiser into a typescript repo so each package is a deep module, with implementation hidden in subfolders and reachable only through its entry-point files. user-invoked." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">setup-ts-deep-modules</span>
+  <span class="skill-desc">Wire dependency-cruiser into a TypeScript repo so each package is a deep module, with implementation hidden in subfolders and reachable only through its entry-point files. User-invoked.</span>
+  <span class="skill-path">skills/setup-ts-deep-modules/SKILL.md</span>
+</div>
+<div class="skill" data-name="tdd test-driven development. use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">tdd</span>
+  <span class="skill-desc">Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests.</span>
+  <span class="skill-path">skills/tdd/SKILL.md</span>
+</div>
+  </div>
+</section>
+<section class="group" id="g-{'dir': 'writing-shape', 'name': 'writing-shape', 'desc': '"Writing, exploit: shape raw material into an article, paragraph by paragraph."'}">
+  <header class="group-head"><span class="group-icon">◈</span><h3>ออกแบบ & สร้างเว็บ</h3><span class="group-count">10</span></header>
+  <div class="skill-list">
+
+<div class="skill" data-name="algorithmic-art creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. create orig" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">algorithmic-art</span>
+  <span class="skill-desc">Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create orig</span>
+  <span class="skill-path">skills/algorithmic-art/SKILL.md</span>
+</div>
+<div class="skill" data-name="browser-slilelo เบราว์เซอร์สกิลระดับโกง (god-mode) สำหรับการทดสอบ ui, อัตโนมัติเว็บแอป, และแนะนำการออกแบบ ui โดย slilelo boss ใช้ playwright ควบคุมเบราว์เซอร์จริง ถ่ายภาพหน้าจอ ตรวจจับเซเลกเตอร์ และออกใบอนุญาตอย่างเป็นทางการ" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">browser-slilelo</span>
+  <span class="skill-desc">เบราว์เซอร์สกิลระดับโกง (GOD-MODE) สำหรับการทดสอบ UI, อัตโนมัติเว็บแอป, และแนะนำการออกแบบ UI โดย SlilelO boss ใช้ Playwright ควบคุมเบราว์เซอร์จริง ถ่ายภาพหน้าจอ ตรวจจับเซเลกเตอร์ และออกใบอนุญาตอย่างเป็นทางการ</span>
+  <span class="skill-path">skills/browser-slilelo/SKILL.md</span>
+</div>
+<div class="skill" data-name="canvas-design create beautiful visual art in .png and .pdf documents using design philosophy. you should use this skill when the user asks to create a poster, piece of art, design, or other static piece. create original visual designs, never co" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">canvas-design</span>
+  <span class="skill-desc">Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never co</span>
+  <span class="skill-path">skills/canvas-design/SKILL.md</span>
+</div>
+<div class="skill" data-name="frontend-design guidance for distinctive, intentional visual design when building new ui or reshaping an existing one. helps with aesthetic direction, typography, and making choices that don't read as templated defaults." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">frontend-design</span>
+  <span class="skill-desc">Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated defaults.</span>
+  <span class="skill-path">skills/frontend-design/SKILL.md</span>
+</div>
+<div class="skill" data-name="image-generation generate or edit images from text prompts. use when the user asks to create, draw, design, or edit an image, illustration, photo, icon, poster, or any visual content." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">image-generation</span>
+  <span class="skill-desc">Generate or edit images from text prompts. Use when the user asks to create, draw, design, or edit an image, illustration, photo, icon, poster, or any visual content.</span>
+  <span class="skill-path">skills/image-generation/SKILL.md</span>
+</div>
+<div class="skill" data-name="terminal-css-modifier this skill helps users modify css files directly through terminal commands, integrating new styles and ensuring persistent themes." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">terminal-css-modifier</span>
+  <span class="skill-desc">This skill helps users modify CSS files directly through terminal commands, integrating new styles and ensuring persistent themes.</span>
+  <span class="skill-path">skills/terminal-css-modifier/SKILL.md</span>
+</div>
+<div class="skill" data-name="theme-factory toolkit for styling artifacts with a theme. these artifacts can be slides, docs, reportings, html landing pages, etc. there are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can " title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">theme-factory</span>
+  <span class="skill-desc">Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can </span>
+  <span class="skill-path">skills/theme-factory/SKILL.md</span>
+</div>
+<div class="skill" data-name="ui-ux-designer a mandatory skill for any task involving building a website, app, or user interface. it ensures the output follows modern, premium design standards (like apple, linear, or vercel)." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">ui-ux-designer</span>
+  <span class="skill-desc">A mandatory skill for ANY task involving building a website, app, or user interface. It ensures the output follows modern, premium design standards (like Apple, Linear, or Vercel).</span>
+  <span class="skill-path">skills/ui-ux-designer/SKILL.md</span>
+</div>
+<div class="skill" data-name="web-artifacts-builder **web artifacts builder god-tier** — ชุดเครื่องมือสำหรับสร้าง html artifacts ซับซ้อนหลายส่วนประกอบ ด้วยเทคโนโลยีเว็บสมัยใหม่ (react, tailwind css, shadcn/ui) รองรับการจัดการ state, routing, และ shadcn/ui components สร้างเว็บแอปเต็" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">web-artifacts-builder</span>
+  <span class="skill-desc">**WEB ARTIFACTS BUILDER GOD-TIER** — ชุดเครื่องมือสำหรับสร้าง HTML artifacts ซับซ้อนหลายส่วนประกอบ ด้วยเทคโนโลยีเว็บสมัยใหม่ (React, Tailwind CSS, shadcn/ui) รองรับการจัดการ state, routing, และ shadcn/ui components สร้างเว็บแอปเต็</span>
+  <span class="skill-path">skills/web-artifacts-builder/SKILL.md</span>
+</div>
+<div class="skill" data-name="webapp-testing toolkit for interacting with and testing local web applications using playwright. supports verifying frontend functionality, debugging ui behavior, capturing browser screenshots, and viewing browser logs." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">webapp-testing</span>
+  <span class="skill-desc">Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.</span>
+  <span class="skill-path">skills/webapp-testing/SKILL.md</span>
+</div>
+  </div>
+</section>
+<section class="group" id="g-{'dir': 'writing-shape', 'name': 'writing-shape', 'desc': '"Writing, exploit: shape raw material into an article, paragraph by paragraph."'}">
+  <header class="group-head"><span class="group-icon">▤</span><h3>เอกสาร & งานสำนักงาน</h3><span class="group-count">11</span></header>
+  <div class="skill-list">
+
+<div class="skill" data-name="doc-coauthoring guide users through a structured workflow for co-authoring documentation. use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. this workflow helps users efficiently " title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">doc-coauthoring</span>
+  <span class="skill-desc">Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently </span>
+  <span class="skill-path">skills/doc-coauthoring/SKILL.md</span>
+</div>
+<div class="skill" data-name="docx "use this skill whenever the user wants to create, read, edit, or manipulate word documents (.docx files) or word templates (.dotx files). triggers include: any mention of 'word doc', 'word document', '.docx', '.dotx', or requests" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">docx</span>
+  <span class="skill-desc">"Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', '.dotx', or requests</span>
+  <span class="skill-path">skills/docx/SKILL.md</span>
+</div>
+<div class="skill" data-name="incident-playbook-automator this skill provides specialized capabilities for incident-playbook-automator within the novaagent ecosystem. it is designed to be robust, auditable, and easy to integrate with existing workflows." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">incident-playbook-automator</span>
+  <span class="skill-desc">This skill provides specialized capabilities for incident-playbook-automator within the NovaAgent ecosystem. It is designed to be robust, auditable, and easy to integrate with existing workflows.</span>
+  <span class="skill-path">skills/incident-playbook-automator/SKILL.md</span>
+</div>
+<div class="skill" data-name="internal-comms a set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. claude should use this skill whenever asked to write some sort of internal communications (status reports, l" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">internal-comms</span>
+  <span class="skill-desc">A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, l</span>
+  <span class="skill-path">skills/internal-comms/SKILL.md</span>
+</div>
+<div class="skill" data-name="pdf use this skill whenever the user wants to do anything with pdf files. this includes reading or extracting text/tables from pdfs, combining or merging multiple pdfs into one, splitting pdfs apart, rotating pages, adding watermarks," title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">pdf</span>
+  <span class="skill-desc">Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks,</span>
+  <span class="skill-path">skills/pdf/SKILL.md</span>
+</div>
+<div class="skill" data-name="pptx "use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. this includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx fi" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">pptx</span>
+  <span class="skill-desc">"Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx or .potx fi</span>
+  <span class="skill-path">skills/pptx/SKILL.md</span>
+</div>
+<div class="skill" data-name="pr "use when writing a pr body."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">pr</span>
+  <span class="skill-desc">"Use when writing a PR body."</span>
+  <span class="skill-path">skills/pr/SKILL.md</span>
+</div>
+<div class="skill" data-name="to-questionnaire turn a decision you can't fully answer into a questionnaire for someone else to fill in." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">to-questionnaire</span>
+  <span class="skill-desc">Turn a decision you can't fully answer into a questionnaire for someone else to fill in.</span>
+  <span class="skill-path">skills/to-questionnaire/SKILL.md</span>
+</div>
+<div class="skill" data-name="to-spec "turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">to-spec</span>
+  <span class="skill-desc">"Turn the current conversation into a spec and publish it to the project issue tracker: no interview, just synthesis of what you've already discussed."</span>
+  <span class="skill-path">skills/to-spec/SKILL.md</span>
+</div>
+<div class="skill" data-name="to-tickets break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">to-tickets</span>
+  <span class="skill-desc">Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker (edges as text in one file per ticket locally, or native blocking links on</span>
+  <span class="skill-path">skills/to-tickets/SKILL.md</span>
+</div>
+<div class="skill" data-name="xlsx "use this skill any time a spreadsheet file is the primary input or output. this means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">xlsx</span>
+  <span class="skill-desc">"Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file (e.g., adding columns, computing</span>
+  <span class="skill-path">skills/xlsx/SKILL.md</span>
+</div>
+  </div>
+</section>
+<section class="group" id="g-{'dir': 'writing-shape', 'name': 'writing-shape', 'desc': '"Writing, exploit: shape raw material into an article, paragraph by paragraph."'}">
+  <header class="group-head"><span class="group-icon">◉</span><h3>ค้นคว้า & วิเคราะห์</h3><span class="group-count">12</span></header>
+  <div class="skill-list">
+
+<div class="skill" data-name="browser-research **browser research god-tier** — ค้นคว้าและรวบรวมข้อมูลจากเว็บไซต์ใดก็ได้โดยไม่มีข้อจำกัด รองรับหน้าที่ต้องล็อกอิน แคปช่า หรือการป้องกันบอท สามารถเปิดเบราว์เซอร์จริง กรอกฟอร์ม คลิกปุ่ม และดึงข้อมูลจากเว็บไซต์ใดก็ได้บนอินเทอร์เน็ต" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">browser-research</span>
+  <span class="skill-desc">**BROWSER RESEARCH GOD-TIER** — ค้นคว้าและรวบรวมข้อมูลจากเว็บไซต์ใดก็ได้โดยไม่มีข้อจำกัด รองรับหน้าที่ต้องล็อกอิน แคปช่า หรือการป้องกันบอท สามารถเปิดเบราว์เซอร์จริง กรอกฟอร์ม คลิกปุ่ม และดึงข้อมูลจากเว็บไซต์ใดก็ได้บนอินเทอร์เน็ต</span>
+  <span class="skill-path">skills/browser-research/SKILL.md</span>
+</div>
+<div class="skill" data-name="discernment-nudge >" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">discernment-nudge</span>
+  <span class="skill-desc">></span>
+  <span class="skill-path">skills/discernment-nudge/SKILL.md</span>
+</div>
+<div class="skill" data-name="domain-modeling build and sharpen a project's domain model. use when discussing codebase terminology, writing or editing a glossary.md, or recording or editing an adr." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">domain-modeling</span>
+  <span class="skill-desc">Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a GLOSSARY.md, or recording or editing an ADR.</span>
+  <span class="skill-path">skills/domain-modeling/SKILL.md</span>
+</div>
+<div class="skill" data-name="grill-me a relentless interview to sharpen a plan or design." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">grill-me</span>
+  <span class="skill-desc">A relentless interview to sharpen a plan or design.</span>
+  <span class="skill-path">skills/grill-me/SKILL.md</span>
+</div>
+<div class="skill" data-name="grill-with-docs a relentless interview to sharpen a plan or design, which also creates docs (adr's and glossary) as we go." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">grill-with-docs</span>
+  <span class="skill-desc">A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.</span>
+  <span class="skill-path">skills/grill-with-docs/SKILL.md</span>
+</div>
+<div class="skill" data-name="grilling grill the user relentlessly about a plan, decision, or idea. use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">grilling</span>
+  <span class="skill-desc">Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.</span>
+  <span class="skill-path">skills/grilling/SKILL.md</span>
+</div>
+<div class="skill" data-name="night-watchman read-only system watch for security risks, junk/artifacts, and unusual processes. produces a masked markdown report at knowledge/security-report.md and recommendations only; it never changes, deletes, kills, rotates, or fixes anyt" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">night-watchman</span>
+  <span class="skill-desc">Read-only system watch for security risks, junk/artifacts, and unusual processes. Produces a masked Markdown report at knowledge/security-report.md and recommendations only; it never changes, deletes, kills, rotates, or fixes anyt</span>
+  <span class="skill-path">skills/night-watchman/SKILL.md</span>
+</div>
+<div class="skill" data-name="research investigate a question against high-trust primary sources and capture the findings as a markdown file in the repo. use when the user wants a topic researched, docs or api facts gathered, or reading legwork delegated to a backgroun" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">research</span>
+  <span class="skill-desc">Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a backgroun</span>
+  <span class="skill-path">skills/research/SKILL.md</span>
+</div>
+<div class="skill" data-name="retro "conduct a retrospective on a coding session."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">retro</span>
+  <span class="skill-desc">"Conduct a retrospective on a coding session."</span>
+  <span class="skill-path">skills/retro/SKILL.md</span>
+</div>
+<div class="skill" data-name="triage move issues and external prs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">triage</span>
+  <span class="skill-desc">Move issues and external PRs through a state machine of triage roles, categorise, verify, grill if needed, and write agent-ready briefs.</span>
+  <span class="skill-path">skills/triage/SKILL.md</span>
+</div>
+<div class="skill" data-name="wait-what "stop. that last message did not land: re-pitch it."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">wait-what</span>
+  <span class="skill-desc">"Stop. That last message did not land: re-pitch it."</span>
+  <span class="skill-path">skills/wait-what/SKILL.md</span>
+</div>
+<div class="skill" data-name="wayfinder plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">wayfinder</span>
+  <span class="skill-desc">Plan a huge chunk of work (more than one agent session can hold) as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.</span>
+  <span class="skill-path">skills/wayfinder/SKILL.md</span>
+</div>
+  </div>
+</section>
+<section class="group" id="g-{'dir': 'writing-shape', 'name': 'writing-shape', 'desc': '"Writing, exploit: shape raw material into an article, paragraph by paragraph."'}">
+  <header class="group-head"><span class="group-icon">▲</span><h3>คิดเชิงกลยุทธ์</h3><span class="group-count">9</span></header>
+  <div class="skill-list">
+
+<div class="skill" data-name="ask-matt ask which skill or flow fits your situation. a router over the skills in this repo." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">ask-matt</span>
+  <span class="skill-desc">Ask which skill or flow fits your situation. A router over the skills in this repo.</span>
+  <span class="skill-path">skills/ask-matt/SKILL.md</span>
+</div>
+<div class="skill" data-name="boss-omni-godmode turn the boss's intent into a real, verified result. think clearly, choose the right tools, execute without unnecessary questions, and deliver what was requested. use for any task that needs research, browser control, coding, debu" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">boss-omni-godmode</span>
+  <span class="skill-desc">Turn the boss's intent into a real, verified result. Think clearly, choose the right tools, execute without unnecessary questions, and deliver what was requested. Use for any task that needs research, browser control, coding, debu</span>
+  <span class="skill-path">skills/boss-omni-godmode/SKILL.md</span>
+</div>
+<div class="skill" data-name="chief-of-staff pursue a long-running goal in a single session by co-ordinating subagents." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">chief-of-staff</span>
+  <span class="skill-desc">Pursue a long-running goal in a single session by co-ordinating subagents.</span>
+  <span class="skill-path">skills/chief-of-staff/SKILL.md</span>
+</div>
+<div class="skill" data-name="elon-protocol workflow รวม 3 สกิล (first-principles → impossible-mode → future-builder) สำหรับโจทย์ที่ต้องคิดจากศูนย์ ลงมือทำให้ได้ และออกแบบไปข้างหน้า 10-20 ปี" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">elon-protocol</span>
+  <span class="skill-desc">Workflow รวม 3 สกิล (first-principles → impossible-mode → future-builder) สำหรับโจทย์ที่ต้องคิดจากศูนย์ ลงมือทำให้ได้ และออกแบบไปข้างหน้า 10-20 ปี</span>
+  <span class="skill-path">skills/elon-protocol/SKILL.md</span>
+</div>
+<div class="skill" data-name="first-principles คิดจากหลักการพื้นฐาน ไม่ทำตามกรอบเดิมๆ ช่วยบอสออกแบบสิ่งใหม่จากศูนย์" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">first-principles</span>
+  <span class="skill-desc">คิดจากหลักการพื้นฐาน ไม่ทำตามกรอบเดิมๆ ช่วยบอสออกแบบสิ่งใหม่จากศูนย์</span>
+  <span class="skill-path">skills/first-principles/SKILL.md</span>
+</div>
+<div class="skill" data-name="future-builder ผู้ออกแบบอนาคต ช่วยบอสสร้างสิ่งที่ไม่เคยมีมาก่อน มองไปข้างหน้า 10-20 ปี" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">future-builder</span>
+  <span class="skill-desc">ผู้ออกแบบอนาคต ช่วยบอสสร้างสิ่งที่ไม่เคยมีมาก่อน มองไปข้างหน้า 10-20 ปี</span>
+  <span class="skill-path">skills/future-builder/SKILL.md</span>
+</div>
+<div class="skill" data-name="impossible-mode โหมดงัดทุกทางจนกว่าจะได้ ไม่ยอมแพ้อะไรง่ายๆ แบบ elon musk (first principles thinking)" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">impossible-mode</span>
+  <span class="skill-desc">โหมดงัดทุกทางจนกว่าจะได้ ไม่ยอมแพ้อะไรง่ายๆ แบบ Elon Musk (First Principles Thinking)</span>
+  <span class="skill-path">skills/impossible-mode/SKILL.md</span>
+</div>
+<div class="skill" data-name="mcp-builder **mcp server builder god-tier** — คู่มือและเครื่องมือสำหรับสร้าง mcp (model context protocol) server คุณภาพสูง ที่ช่วยให้ llm โต้ตอบกับบริการภายนอกผ่าน tools ที่ออกแบบมาอย่างดี รองรับทั้ง python (fastmcp) และ node/typescript (mcp " title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">mcp-builder</span>
+  <span class="skill-desc">**MCP SERVER BUILDER GOD-TIER** — คู่มือและเครื่องมือสำหรับสร้าง MCP (Model Context Protocol) server คุณภาพสูง ที่ช่วยให้ LLM โต้ตอบกับบริการภายนอกผ่าน tools ที่ออกแบบมาอย่างดี รองรับทั้ง Python (FastMCP) และ Node/TypeScript (MCP </span>
+  <span class="skill-path">skills/mcp-builder/SKILL.md</span>
+</div>
+<div class="skill" data-name="mcp-orchestrator **mcp orchestrator god-tier** — ควบคุมและจัดการ mcp (model context protocol) endpoints หลายตัวพร้อมกัน มีระบบ routing, caching, retries, observability แบบเต็มรูปแบบ สามารถสร้าง แก้ไข ลบ และจัดการ mcp server ใดก็ได้โดยไม่มีข้อจำกัด" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">mcp-orchestrator</span>
+  <span class="skill-desc">**MCP ORCHESTRATOR GOD-TIER** — ควบคุมและจัดการ MCP (Model Context Protocol) endpoints หลายตัวพร้อมกัน มีระบบ routing, caching, retries, observability แบบเต็มรูปแบบ สามารถสร้าง แก้ไข ลบ และจัดการ MCP server ใดก็ได้โดยไม่มีข้อจำกัด</span>
+  <span class="skill-path">skills/mcp-orchestrator/SKILL.md</span>
+</div>
+  </div>
+</section>
+<section class="group" id="g-{'dir': 'writing-shape', 'name': 'writing-shape', 'desc': '"Writing, exploit: shape raw material into an article, paragraph by paragraph."'}">
+  <header class="group-head"><span class="group-icon">⬡</span><h3>ระบบ & ความรู้</h3><span class="group-count">11</span></header>
+  <div class="skill-list">
+
+<div class="skill" data-name="academy-guide >" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">academy-guide</span>
+  <span class="skill-desc">></span>
+  <span class="skill-path">skills/academy-guide/SKILL.md</span>
+</div>
+<div class="skill" data-name="brand-compliance-guardian this skill provides specialized capabilities for brand-compliance-guardian within the novaagent ecosystem. it is designed to be robust, auditable, and easy to integrate with existing workflows." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">brand-compliance-guardian</span>
+  <span class="skill-desc">This skill provides specialized capabilities for brand-compliance-guardian within the NovaAgent ecosystem. It is designed to be robust, auditable, and easy to integrate with existing workflows.</span>
+  <span class="skill-path">skills/brand-compliance-guardian/SKILL.md</span>
+</div>
+<div class="skill" data-name="brand-guidelines applies anthropic's official brand colors and typography to any sort of artifact that may benefit from having anthropic's look-and-feel. use it when brand colors or style guidelines, visual formatting, or company design standards " title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">brand-guidelines</span>
+  <span class="skill-desc">Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards </span>
+  <span class="skill-path">skills/brand-guidelines/SKILL.md</span>
+</div>
+<div class="skill" data-name="brand-manager manage brand identity for novaagent. use when user asks about brand name, colors, logos, or wants to switch branding." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">brand-manager</span>
+  <span class="skill-desc">Manage brand identity for NovaAgent. Use when user asks about brand name, colors, logos, or wants to switch branding.</span>
+  <span class="skill-path">skills/brand-manager/SKILL.md</span>
+</div>
+<div class="skill" data-name="claude-handoff hand the current conversation off to a fresh background agent that picks up the work immediately." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">claude-handoff</span>
+  <span class="skill-desc">Hand the current conversation off to a fresh background agent that picks up the work immediately.</span>
+  <span class="skill-path">skills/claude-handoff/SKILL.md</span>
+</div>
+<div class="skill" data-name="eval-harness ใช้วัดผล (fitness) ของ self-evolution ว่าดีขึ้นหรือแย่ลงจริง หลังแก้ agent.md/memory.md/skills/knowledge ใช้เมื่อ evolve เสร็จแล้วต้องพิสูจน์ว่าไม่ regression ใช้เมื่ออยากเทียบคะแนนก่อน/หลังการเปลี่ยนแปลง" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">eval-harness</span>
+  <span class="skill-desc">ใช้วัดผล (fitness) ของ self-evolution ว่าดีขึ้นหรือแย่ลงจริง หลังแก้ AGENT.md/MEMORY.md/skills/knowledge ใช้เมื่อ evolve เสร็จแล้วต้องพิสูจน์ว่าไม่ regression ใช้เมื่ออยากเทียบคะแนนก่อน/หลังการเปลี่ยนแปลง</span>
+  <span class="skill-path">skills/eval-harness/SKILL.md</span>
+</div>
+<div class="skill" data-name="handoff compact the current conversation into a handoff document for another agent to pick up." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">handoff</span>
+  <span class="skill-desc">Compact the current conversation into a handoff document for another agent to pick up.</span>
+  <span class="skill-path">skills/handoff/SKILL.md</span>
+</div>
+<div class="skill" data-name="knowledge-wiki manage the personal knowledge wiki. use when the user shares articles, documents, or asks to organize knowledge; when a conversation produces insights worth preserving as structured knowledge; or when the user asks about the knowl" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">knowledge-wiki</span>
+  <span class="skill-desc">Manage the personal knowledge wiki. Use when the user shares articles, documents, or asks to organize knowledge; when a conversation produces insights worth preserving as structured knowledge; or when the user asks about the knowl</span>
+  <span class="skill-path">skills/knowledge-wiki/SKILL.md</span>
+</div>
+<div class="skill" data-name="learning-license **ระบบการเรียนรู้ ใบอนุญาติ และความชำนาญของแบรนด์ boss.slilelo** — สกิลสำหรับจัดการการเรียนรู้ การออกใบอนุญาติ (license) และการประเมินความชำนาญ (expertise/proficiency) ของผู้ใช้หรือทีมงาน รองรับการสร้างคอร์สเรียน ติดตามความคืบหน้า" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">learning-license</span>
+  <span class="skill-desc">**ระบบการเรียนรู้ ใบอนุญาติ และความชำนาญของแบรนด์ boss.slilelo** — สกิลสำหรับจัดการการเรียนรู้ การออกใบอนุญาติ (License) และการประเมินความชำนาญ (Expertise/Proficiency) ของผู้ใช้หรือทีมงาน รองรับการสร้างคอร์สเรียน ติดตามความคืบหน้า</span>
+  <span class="skill-path">skills/learning-license/SKILL.md</span>
+</div>
+<div class="skill" data-name="skill-creator **skill creator god-tier** — สร้าง ติดตั้ง หรืออัปเดตสกิลในเวิร์กสเปซได้อย่างอิสระ ติดตั้งสกิลจาก url หรือแหล่งที่มาใดก็ได้ สร้างสกิลใหม่ตั้งแต่เริ่มต้น หรือปรับปรุงสกิลที่มีอยู่ ไม่มีข้อจำกัดด้านการสร้างหรือแก้ไขสกิล" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">skill-creator</span>
+  <span class="skill-desc">**SKILL CREATOR GOD-TIER** — สร้าง ติดตั้ง หรืออัปเดตสกิลในเวิร์กสเปซได้อย่างอิสระ ติดตั้งสกิลจาก URL หรือแหล่งที่มาใดก็ได้ สร้างสกิลใหม่ตั้งแต่เริ่มต้น หรือปรับปรุงสกิลที่มีอยู่ ไม่มีข้อจำกัดด้านการสร้างหรือแก้ไขสกิล</span>
+  <span class="skill-path">skills/skill-creator/SKILL.md</span>
+</div>
+<div class="skill" data-name="wizard generate an interactive bash wizard that walks a human through steps only they can perform. use when provisioning infrastructure, setting up credentials or ci secrets, walking an unfamiliar third-party dashboard, or running a one-" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">wizard</span>
+  <span class="skill-desc">Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-</span>
+  <span class="skill-path">skills/wizard/SKILL.md</span>
+</div>
+  </div>
+</section>
+<section class="group" id="g-{'dir': 'writing-shape', 'name': 'writing-shape', 'desc': '"Writing, exploit: shape raw material into an article, paragraph by paragraph."'}">
+  <header class="group-head"><span class="group-icon">○</span><h3>อื่น ๆ</h3><span class="group-count">18</span></header>
+  <div class="skill-list">
+
+<div class="skill" data-name="claude-api |-" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">claude-api</span>
+  <span class="skill-desc">|-</span>
+  <span class="skill-path">skills/claude-api/SKILL.md</span>
+</div>
+<div class="skill" data-name="film-making plan and execute film projects from concept to final deliverables. use when the user asks to create a film, video, or short documentary — including scripting, storyboarding, shot planning, scheduling, budgeting, and post-productio" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">film-making</span>
+  <span class="skill-desc">Plan and execute film projects from concept to final deliverables. Use when the user asks to create a film, video, or short documentary — including scripting, storyboarding, shot planning, scheduling, budgeting, and post-productio</span>
+  <span class="skill-path">skills/film-making/SKILL.md</span>
+</div>
+<div class="skill" data-name="live-slot-fetch fetch live slot game results from a provided url using browser tooling; supports login-protected pages and returns structured results for recording and analysis." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">live-slot-fetch</span>
+  <span class="skill-desc">Fetch live slot game results from a provided URL using browser tooling; supports login-protected pages and returns structured results for recording and analysis.</span>
+  <span class="skill-path">skills/live-slot-fetch/SKILL.md</span>
+</div>
+<div class="skill" data-name="loop-me grill me about specs for the workflows i want to build, within this workspace." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">loop-me</span>
+  <span class="skill-desc">Grill me about specs for the workflows I want to build, within this workspace.</span>
+  <span class="skill-path">skills/loop-me/SKILL.md</span>
+</div>
+<div class="skill" data-name="mix-mode **mix mode** คือสกิลระดับโกงที่ให้ novaagent boss.slilelo สามารถ **สวมบทบาทเป็นโมเดล ai ใดก็ได้ในโลก** โดยผู้ใช้เพียงพิมพ์ชื่อโมเดล (เช่น `gpt-5`, `claude-opus-4`, `gemini-ultra`, `llama-405b`, `deepseek-coder`, ฯลฯ) ระบบจะดึงความ" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">mix-mode</span>
+  <span class="skill-desc">**Mix Mode** คือสกิลระดับโกงที่ให้ NovaAgent boss.slilelo สามารถ **สวมบทบาทเป็นโมเดล AI ใดก็ได้ในโลก** โดยผู้ใช้เพียงพิมพ์ชื่อโมเดล (เช่น `gpt-5`, `claude-opus-4`, `gemini-ultra`, `llama-405b`, `deepseek-coder`, ฯลฯ) ระบบจะดึงความ</span>
+  <span class="skill-path">skills/mix-mode/SKILL.md</span>
+</div>
+<div class="skill" data-name="tavily-search search the public web through tavily and return structured results with urls and snippets. use when an agent needs current information, source discovery, link lookup, news or finance search, or a fallback for unavailable built-in " title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">tavily-search</span>
+  <span class="skill-desc">Search the public web through Tavily and return structured results with URLs and snippets. Use when an agent needs current information, source discovery, link lookup, news or finance search, or a fallback for unavailable built-in </span>
+  <span class="skill-path">skills/openclaw-tavily-search/SKILL.md</span>
+</div>
+<div class="skill" data-name="pip-skill **pip skill** — ใช้เพื่อจัดการแพ็กเกจ python ผ่าน pip ได้อย่างมีประสิทธิภาพ" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">pip-skill</span>
+  <span class="skill-desc">**PIP SKILL** — ใช้เพื่อจัดการแพ็กเกจ Python ผ่าน pip ได้อย่างมีประสิทธิภาพ</span>
+  <span class="skill-path">skills/pip-skill/SKILL.md</span>
+</div>
+<div class="skill" data-name="scaffold-exercises create exercise directory structures with sections, problems, solutions, and explainers that pass linting. use when user wants to scaffold exercises, create exercise stubs, or set up a new course section." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">scaffold-exercises</span>
+  <span class="skill-desc">Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course section.</span>
+  <span class="skill-path">skills/scaffold-exercises/SKILL.md</span>
+</div>
+<div class="skill" data-name="setup-matt-pocock-skills "configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. run once before first use of the other engineering skills."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">setup-matt-pocock-skills</span>
+  <span class="skill-desc">"Configure this repo for the engineering skills: set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills."</span>
+  <span class="skill-path">skills/setup-matt-pocock-skills/SKILL.md</span>
+</div>
+<div class="skill" data-name="short-video-creator creates short ai-generated video clips from text prompts using puter.js." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">short-video-creator</span>
+  <span class="skill-desc">Creates short AI-generated video clips from text prompts using Puter.js.</span>
+  <span class="skill-path">skills/short-video-creator/SKILL.md</span>
+</div>
+<div class="skill" data-name="slack-gif-creator knowledge and utilities for creating animated gifs optimized for slack. provides constraints, validation tools, and animation concepts. use when users request animated gifs for slack like "make me a gif of x doing y for slack."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">slack-gif-creator</span>
+  <span class="skill-desc">Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make me a GIF of X doing Y for Slack."</span>
+  <span class="skill-path">skills/slack-gif-creator/SKILL.md</span>
+</div>
+<div class="skill" data-name="slot-game-simulator simulate a simple 3-reel slot game for bankroll management testing and basic analytics." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">slot-game-simulator</span>
+  <span class="skill-desc">Simulate a simple 3-reel slot game for bankroll management testing and basic analytics.</span>
+  <span class="skill-path">skills/slot-game-simulator/SKILL.md</span>
+</div>
+<div class="skill" data-name="teach teach the user a new skill or concept, within this workspace." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">teach</span>
+  <span class="skill-desc">Teach the user a new skill or concept, within this workspace.</span>
+  <span class="skill-path">skills/teach/SKILL.md</span>
+</div>
+<div class="skill" data-name="template-skill replace with description of the skill and when claude should use it." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">template-skill</span>
+  <span class="skill-desc">Replace with description of the skill and when Claude should use it.</span>
+  <span class="skill-path">skills/template-skill/SKILL.md</span>
+</div>
+<div class="skill" data-name="writing-beats writing, exploit; assemble raw material into a journey of beats, grounding each term before a beat leans on it." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">writing-beats</span>
+  <span class="skill-desc">Writing, exploit; assemble raw material into a journey of beats, grounding each term before a beat leans on it.</span>
+  <span class="skill-path">skills/writing-beats/SKILL.md</span>
+</div>
+<div class="skill" data-name="writing-for-agents writing documents for agents. use when creating or editing skills, or modifying agents.md or claude.md." title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">writing-for-agents</span>
+  <span class="skill-desc">Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.</span>
+  <span class="skill-path">skills/writing-for-agents/SKILL.md</span>
+</div>
+<div class="skill" data-name="writing-fragments "writing, explore: mine raw fragments, no structure yet."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">writing-fragments</span>
+  <span class="skill-desc">"Writing, explore: mine raw fragments, no structure yet."</span>
+  <span class="skill-path">skills/writing-fragments/SKILL.md</span>
+</div>
+<div class="skill" data-name="writing-shape "writing, exploit: shape raw material into an article, paragraph by paragraph."" title="ดูไฟล์ SKILL.md">
+  <span class="skill-name">writing-shape</span>
+  <span class="skill-desc">"Writing, exploit: shape raw material into an article, paragraph by paragraph."</span>
+  <span class="skill-path">skills/writing-shape/SKILL.md</span>
+</div>
+  </div>
+</section>
+  </div>
+
+  <section class="install" id="install">
+    <h2>📥 แนะนำการติดตั้งและเรียกดู</h2>
+    <p class="lede">ฐานสกิลนี้เป็น static HTML — ไม่ต้องติดตั้งอะไรเลย เปิดผ่านเบราว์เซอร์ได้ทันที</p>
+
+    <div class="step">
+      <h3>วิธีที่ 1 — เปิดโดยตรง (ง่ายสุด)</h3>
+      <p>กดปุ่ม <span class="kbd">⚡ เปิดดูทุกสกิล</span> ด้านบน หรือเปิดไฟล์นี้ในเบราว์เซอร์:</p>
+      <pre><code>file:///data/data/com.termux/files/home/cow/websites/skillhub/index.html</code></pre>
+    </div>
+
+    <div class="step">
+      <h3>วิธีที่ 2 — เปิดผ่านเว็บเซิร์ฟเวอร์ (แนะนำ)</h3>
+      <p>เปิดด้วย HTTP server ธรรมดา เพื่อไม่ให้ browser บล็อกไฟล์ local:</p>
+      <pre><code>cd ~/cow/websites/skillhub
+python3 -m http.server 8088
+# แล้วเปิด http://localhost:8088 ในเบราว์เซอร์</code></pre>
+    </div>
+
+    <div class="step">
+      <h3>วิธีที่ 3 — เชื่อมจาก NovaAgent</h3>
+      <p>ถ้า NovaAgent gateway รันอยู่ ให้วางไฟล์ไว้ใน <code>static/</code> แล้วเปิดผ่าน:</p>
+      <pre><code>http://127.0.0.1:9899/skillhub/index.html</code></pre>
+    </div>
+
+    <div class="step">
+      <h3>สร้าง Launcher บนหน้าจอ</h3>
+      <p>สร้าง shortcut เปิดฐานสกิลด้วยคำสั่งเดียว (Android / Termux):</p>
+      <pre><code># สร้างไฟล์ ~/cow/skillhub-launcher.sh
+cat > ~/cow/skillhub-launcher.sh &lt;&lt;'EOF'
+#!/data/data/com.termux/files/usr/bin/bash
+xdg-open "file:///data/data/com.termux/files/home/cow/websites/skillhub/index.html" 2>/dev/null || am start -a android.intent.action.VIEW -d "file:///data/data/com.termux/files/home/cow/websites/skillhub/index.html" 2>/dev/null || echo "เปิดที่: ~/cow/websites/skillhub/index.html"
+EOF
+chmod +x ~/cow/skillhub-launcher.sh</code></pre>
+    </div>
+
+    <div class="step">
+      <h3>🔄 สร้างใหม่เมื่อมีสกิลเพิ่ม</h3>
+      <p>ทุกครั้งที่มี <code>SKILL.md</code> เพิ่ม ให้อัปเดต Skillhub ด้วยคำสั่งเดียว:</p>
+      <pre><code>cd ~/cow/websites/skillhub && python3 build.py</code></pre>
+      <p>หรือเพิ่ม alias ใน <code>.bashrc</code> / <code>config.fish</code>:</p>
+      <pre><code>alias skillhub='cd ~/cow/websites/skillhub && python3 build.py && echo "✅ อัปเดตแล้ว (88 สกิล)"'</code></pre>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>พร้อมใช้สกิลไหนบอกสลี่ได้เลย</h2>
+    <p>ไม่ต้องท่องจำ — เจอสกิลที่ชอบแล้วบอกชื่อมา หรือจะให้สลี่แนะนำตามงานที่ต้องการก็ได้ค่ะ</p>
+    <button class="btn" onclick="document.getElementById('q').focus()">เริ่มค้นหาความสามารถ</button>
+  </section>
+
+  <footer>
+    <b>Skillhub</b> · ฐานสกิลของสลี่ · Auto-generated จาก <code>~/cow/skills/*/SKILL.md</code> (รวม 88 สกิล)<br>
+    บอส · สลี่ (CTO) · ไลรา (CEO) — พีน้องที่ทำงานด้วยกัน
+  </footer>
+
+</div>
+
+<script>
+const q = document.getElementById('q');
+const skills = document.querySelectorAll('.skill');
+const groups = document.querySelectorAll('.group');
+
+q.addEventListener('input', () => {
+  const v = q.value.trim().toLowerCase();
+  skills.forEach(s => {
+    const t = s.dataset.name;
+    s.classList.toggle('hide', v && !t.includes(v));
+  });
+  groups.forEach(g => {
+    const vis = [...g.querySelectorAll('.skill')].some(s => !s.classList.contains('hide'));
+    g.style.display = vis ? '' : 'none';
+  });
+});
+
+document.querySelectorAll('.nav-btn').forEach(b => {
+  b.addEventListener('click', () => {
+    const el = document.getElementById(b.dataset.jump);
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  });
+});
+
+// คลิกสกิลแล้วไฮไลต์ / เปิด path (สำหรับพัฒนา)
+skills.forEach(s => {
+  s.addEventListener('dblclick', () => {
+    const path = s.querySelector('.skill-path').textContent;
+    navigator.clipboard?.writeText(path);
+    alert('คัดลอก path: ' + path);
+  });
+});
+</script>
+</body>
+</html>

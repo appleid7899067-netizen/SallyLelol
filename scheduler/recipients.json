@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "recipients": {
+    "agent:guardian-slilelo": {
+      "channel_type": "agent",
+      "instance_id": "agent",
+      "receiver": "guardian-slilelo",
+      "name": "未知",
+      "is_group": false,
+      "session_id": "delegate_default_guardian-slilelo_65b83c50c33bfb4f",
+      "last_seen_at": "2026-10-24T01:27:04.025251+00:00"
+    },
+    "agent:default": {
+      "channel_type": "agent",
+      "instance_id": "agent",
+      "receiver": "default",
+      "name": "未知",
+      "is_group": false,
+      "session_id": "delegate_guardian-slilelo_default_64545dbc14a19ee0",
+      "last_seen_at": "2026-10-22T05:55:29.280284+00:00"
+    },
+    "openai_api:openai%3Arequest%3Achatcmpl-9daddb78e17d4ec49d33a30fca1668c1": {
+      "channel_type": "openai_api",
+      "instance_id": "openai_api",
+      "receiver": "openai:request:chatcmpl-9daddb78e17d4ec49d33a30fca1668c1",
+      "name": "未知",
+      "is_group": false,
+      "session_id": "openai:request:chatcmpl-9daddb78e17d4ec49d33a30fca1668c1",
+      "last_seen_at": "2026-10-23T13:56:08.918321+00:00"
+    },
+    "openai_api:openai%3Arequest%3Achatcmpl-6339a1bef62f4f36b289b6f52aa09c35": {
+      "channel_type": "openai_api",
+      "instance_id": "openai_api",
+      "receiver": "openai:request:chatcmpl-6339a1bef62f4f36b289b6f52aa09c35",
+      "name": "未知",
+      "is_group": false,
+      "session_id": "openai:request:chatcmpl-6339a1bef62f4f36b289b6f52aa09c35",
+      "last_seen_at": "2026-10-23T14:05:40.391553+00:00"
+    }
+  }
+}

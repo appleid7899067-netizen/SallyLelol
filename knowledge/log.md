@@ -27,3 +27,17 @@
 ## [2026-10-22] synthesize | NovaAgent Security Remediation Plan
 
 ## [2026-10-22] ingest | Puter OpenAI/GPT Pricing (22 October 2026)
+## [2026-10-24] synthesize | Browser MCP เชื่อม NovaAgent
+
+
+## [2026-10-24] synthesize | Browser MCP บน Termux/Android: แก้ Playwright import crash
+
+## [2026-10-25] synthesize | Bash Wrapper สำหรับ Chromium CDP แบบปลอดภัย
+
+## [2026-10-25] research | AI Coding Agent Competitive Matrix
+
+## [2026-10-25] update | แยกเอกสาร NovaAgent ออกจาก CowAgent ต้นทาง
+
+## [2026-10-25] research | Manus: ทำงานบน Chrome ที่ผู้ใช้มองเห็น
+
+## [2026-10-25] research | ควบคุม Chrome จริงบน Android/Termux: ทางเลือกจาก GitHub

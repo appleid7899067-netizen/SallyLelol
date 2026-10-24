@@ -1,0 +1,13 @@
+{
+  "id": "skills-integrity",
+  "category": "skills",
+  "weight": 3,
+  "description": "ทุก skill ต้องมี SKILL.md ที่อ่านได้ และสกิลแกนต้องอยู่ครบ",
+  "checks": [
+    {"type": "file_exists", "path": "skills/boss-omni-godmode/SKILL.md"},
+    {"type": "file_exists", "path": "skills/knowledge-wiki/SKILL.md"},
+    {"type": "file_exists", "path": "skills/elon-protocol/SKILL.md"},
+    {"type": "file_exists", "path": "skills/night-watchman/SKILL.md"},
+    {"type": "regex", "path": "skills/boss-omni-godmode/SKILL.md", "pattern": "."}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "id": "knowledge-wiki",
+  "category": "knowledge",
+  "weight": 2,
+  "description": "ฐานความรู้ต้องมี index และ index ต้องอัปเดตสอดคล้อง",
+  "checks": [
+    {"type": "file_exists", "path": "knowledge/index.md"},
+    {"type": "regex", "path": "knowledge/index.md", "pattern": "^##\\s+Sources"},
+    {"type": "index_has", "path": "knowledge/index.md", "value": "sources/"},
+    {"type": "index_has", "path": "knowledge/index.md", "value": "entities/"},
+    {"type": "file_exists", "path": "knowledge/entities/novaagent.md"}
+  ]
+}

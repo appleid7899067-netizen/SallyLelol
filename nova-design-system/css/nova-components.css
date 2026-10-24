@@ -1,0 +1,528 @@
+/*
+ * Nova Chat UI Components v1.0.0
+ * Nova Modern Stack — ชุดคอมโพเนนต์แชท
+ * Non-destructive: override existing components with Nova styling
+ */
+
+/* ========================= Global base ========================= */
+nova-body, .nova-base {
+  font-family: var(--nova-font-sans);
+  font-size: var(--nova-text-base);
+  color: var(--nova-text-primary);
+  background: var(--nova-bg-950);
+  line-height: var(--nova-line-normal);
+}
+
+nova-body * {
+  box-sizing: border-box;
+}
+
+nova-body a {
+  color: var(--nova-accent-tertiary);
+  text-decoration: none;
+  transition: color var(--nova-motion-fast) var(--nova-ease-out);
+}
+nova-body a:hover {
+  color: #f472b6;
+}
+
+nova-body ::selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: var(--nova-text-primary);
+}
+
+/* Scrollbar */
+nova-body ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+nova-body ::-webkit-scrollbar-track {
+  background: var(--nova-bg-900);
+}
+nova-body ::-webkit-scrollbar-thumb {
+  background: var(--nova-bg-600);
+  border-radius: 9999px;
+}
+nova-body ::-webkit-scrollbar-thumb:hover {
+  background: var(--nova-bg-700);
+}
+
+/* ========================= Chat container ========================= */
+nova-chat-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--nova-space-4);
+  gap: var(--nova-space-4);
+}
+
+/* ========================= Message bubble ========================= */
+nova-message {
+  display: flex;
+  gap: var(--nova-space-3);
+  align-items: flex-start;
+  padding: var(--nova-space-4) var(--nova-space-5);
+  border-radius: var(--nova-radius-xl);
+  max-width: 85%;
+  line-height: var(--nova-line-relaxed);
+  transition: background var(--nova-motion-fast) var(--nova-ease-out);
+}
+nova-message:hover {
+  background: var(--nova-glass-bg);
+}
+
+nova-message.user {
+  align-self: flex-end;
+  background: var(--nova-accent-gradient);
+  color: #fff;
+  border-bottom-right-radius: var(--nova-radius-sm);
+}
+nova-message.assistant {
+  align-self: flex-start;
+  background: var(--nova-bg-800);
+  border: 1px solid var(--nova-glass-border);
+  border-bottom-left-radius: var(--nova-radius-sm);
+}
+
+nova-message-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--nova-radius-full);
+  flex-shrink: 0;
+  background: var(--nova-accent-gradient);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  font-size: var(--nova-text-sm);
+}
+nova-message-avatar.user { background: var(--nova-bg-600); }
+
+nova-message-content {
+  font-size: inherit;
+}
+nova-message-content p {
+  margin: 0 0 var(--nova-space-3);
+}
+nova-message-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================= Tool card ========================= */
+nova-tool-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nova-space-3);
+  background: var(--nova-bg-900);
+  border: 1px solid var(--nova-glass-border);
+  border-radius: var(--nova-radius-lg);
+  padding: var(--nova-space-4);
+  margin-top: var(--nova-space-3);
+  overflow: hidden;
+}
+nova-tool-card.running {
+  border-color: var(--nova-accent-primary);
+  box-shadow: var(--nova-shadow-glow);
+}
+nova-tool-card.done {
+  border-color: var(--nova-success);
+}
+nova-tool-card.error {
+  border-color: var(--nova-error);
+}
+
+nova-tool-header {
+  display: flex;
+  align-items: center;
+  gap: var(--nova-space-3);
+}
+
+nova-tool-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--nova-radius-md);
+  background: var(--nova-bg-700);
+  display: grid;
+  place-items: center;
+  font-size: var(--nova-text-base);
+}
+nova-tool-card.running nova-tool-icon {
+  animation: spin 1s linear infinite;
+  background: rgba(168, 85, 247, 0.15);
+  color: var(--nova-accent-primary);
+}
+nova-tool-card.done nova-tool-icon {
+  background: var(--nova-success-bg);
+  color: var(--nova-success);
+}
+nova-tool-card.error nova-tool-icon {
+  background: var(--nova-error-bg);
+  color: var(--nova-error);
+}
+
+nova-tool-name {
+  font-weight: 600;
+  font-size: var(--nova-text-sm);
+  color: var(--nova-text-primary);
+}
+nova-tool-card.running nova-tool-name {
+  color: var(--nova-accent-primary);
+}
+nova-tool-card.done nova-tool-name {
+  color: var(--nova-success);
+}
+nova-tool-card.error nova-tool-name {
+  color: var(--nova-error);
+}
+
+nova-tool-status {
+  margin-left: auto;
+  font-size: var(--nova-text-xs);
+  font-weight: 500;
+  padding: var(--nova-space-1) var(--nova-space-2);
+  border-radius: var(--nova-radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+nova-tool-card.running nova-tool-status {
+  color: var(--nova-accent-primary);
+  background: rgba(168, 85, 247, 0.12);
+}
+nova-tool-card.done nova-tool-status {
+  color: var(--nova-success);
+  background: var(--nova-success-bg);
+}
+nova-tool-card.error nova-tool-status {
+  color: var(--nova-error);
+  background: var(--nova-error-bg);
+}
+
+nova-tool-body {
+  font-size: var(--nova-text-sm);
+  color: var(--nova-text-secondary);
+  background: var(--nova-bg-950);
+  border-radius: var(--nova-radius-md);
+  padding: var(--nova-space-3);
+}
+
+nova-tool-progress {
+  height: 3px;
+  background: var(--nova-bg-700);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+nova-tool-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--nova-accent-gradient);
+  border-radius: 9999px;
+  transition: width var(--nova-motion-fast) var(--nova-ease-out);
+}
+nova-tool-card.running nova-tool-progress-bar {
+  animation: pulse-progress 1.5s ease-in-out infinite;
+}
+
+nova-tool-footer {
+  display: flex;
+  gap: var(--nova-space-4);
+  font-size: var(--nova-text-xs);
+  color: var(--nova-text-tertiary);
+}
+
+/* ========================= Typing indicator ========================= */
+nova-typing-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--nova-space-2);
+  padding: var(--nova-space-3) var(--nova-space-4);
+  background: var(--nova-bg-800);
+  border-radius: var(--nova-radius-lg);
+  width: fit-content;
+}
+nova-typing-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--nova-accent-primary);
+  border-radius: var(--nova-radius-full);
+  animation: typing 1.4s ease-in-out infinite;
+}
+nova-typing-dot:nth-child(2) { animation-delay: 0.2s; }
+nova-typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+nova-stream-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: var(--nova-success);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+/* ========================= Code block ========================= */
+nova-code-block {
+  background: var(--nova-bg-900);
+  border: 1px solid var(--nova-glass-border);
+  border-radius: var(--nova-radius-lg);
+  margin: var(--nova-space-4) 0;
+  overflow: hidden;
+}
+nova-code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--nova-space-3) var(--nova-space-4);
+  background: var(--nova-bg-950);
+  border-bottom: 1px solid var(--nova-glass-border);
+}
+nova-code-lang {
+  font-family: var(--nova-font-mono);
+  font-size: var(--nova-text-xs);
+  color: var(--nova-text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+nova-code-copy {
+  font-family: var(--nova-font-sans);
+  font-size: var(--nova-text-xs);
+  font-weight: 500;
+  color: var(--nova-text-secondary);
+  background: var(--nova-bg-700);
+  border: none;
+  padding: var(--nova-space-1) var(--nova-space-2);
+  border-radius: var(--nova-radius-sm);
+  cursor: pointer;
+  transition: all var(--nova-motion-fast) var(--nova-ease-out);
+}
+nova-code-copy:hover {
+  background: var(--nova-bg-600);
+  color: var(--nova-text-primary);
+}
+nova-code-copy.copied {
+  background: var(--nova-success-bg);
+  color: var(--nova-success);
+}
+nova-code-body {
+  margin: 0;
+  padding: var(--nova-space-4);
+  font-family: var(--nova-font-mono);
+  font-size: var(--nova-text-sm);
+  line-height: var(--nova-line-tight);
+  color: var(--nova-text-secondary);
+  overflow-x: auto;
+}
+
+nova-line-number {
+  color: var(--nova-text-tertiary);
+  user-select: none;
+  padding-right: var(--nova-space-3);
+  min-width: 28px;
+  text-align: right;
+  display: inline-block;
+}
+
+/* ========================= Skeleton loader ========================= */
+nova-skeleton {
+  background: linear-gradient(90deg, var(--nova-bg-700) 25%, var(--nova-bg-600) 50%, var(--nova-bg-700) 75%);
+  background-size: 200% 100%;
+  border-radius: var(--nova-radius-md);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+nova-skeleton.text { height: 1em; width: 100%; }
+nova-skeleton.line { height: 0.75em; margin-bottom: var(--nova-space-2); }
+nova-skeleton.line.short { width: 60%; }
+nova-skeleton.line.medium { width: 85%; }
+nova-skeleton.line.long { width: 100%; }
+nova-skeleton.image { width: 100%; }
+
+/* ========================= Toast ========================= */
+nova-toast {
+  position: fixed;
+  bottom: var(--nova-space-6);
+  right: var(--nova-space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--nova-space-3);
+  padding: var(--nova-space-3) var(--nova-space-4);
+  background: var(--nova-bg-800);
+  border: 1px solid var(--nova-glass-border);
+  border-radius: var(--nova-radius-lg);
+  box-shadow: var(--nova-shadow-lg);
+  z-index: var(--nova-z-toast);
+  transform: translateY(120%);
+  transition: transform var(--nova-motion-normal) var(--nova-ease-out);
+}
+nova-toast.show { transform: translateY(0); }
+nova-toast.toast-success nova-toast-icon { color: var(--nova-success); }
+nova-toast.toast-error nova-toast-icon { color: var(--nova-error); }
+nova-toast.toast-warning nova-toast-icon { color: var(--nova-warning); }
+nova-toast.toast-info nova-toast-icon { color: var(--nova-info); }
+nova-toast-icon {
+  font-size: var(--nova-text-lg);
+}
+nova-toast-message {
+  font-size: var(--nova-text-sm);
+  font-weight: 500;
+  color: var(--nova-text-primary);
+}
+nova-toast-close {
+  margin-left: var(--nova-space-2);
+  background: none;
+  border: none;
+  color: var(--nova-text-tertiary);
+  cursor: pointer;
+  font-size: var(--nova-text-base);
+  line-height: 1;
+}
+
+/* ========================= Modal ========================= */
+nova-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: var(--nova-z-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--nova-space-4);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--nova-motion-normal) var(--nova-ease-out);
+}
+nova-modal-backdrop.show { opacity: 1; visibility: visible; }
+nova-modal {
+  background: var(--nova-bg-800);
+  border: 1px solid var(--nova-glass-border);
+  border-radius: var(--nova-radius-xl);
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  transform: scale(0.9) translateY(20px);
+  transition: transform var(--nova-motion-normal) var(--nova-ease-out);
+  box-shadow: var(--nova-shadow-glass);
+}
+nova-modal-backdrop.show nova-modal { transform: scale(1) translateY(0); }
+nova-modal-header {
+  padding: var(--nova-space-4) var(--nova-space-5);
+  border-bottom: 1px solid var(--nova-glass-border);
+  font-size: var(--nova-text-lg);
+  font-weight: 600;
+  color: var(--nova-text-primary);
+}
+nova-modal-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--nova-text-tertiary);
+  cursor: pointer;
+  font-size: var(--nova-text-xl);
+  line-height: 1;
+  padding: var(--nova-space-1);
+}
+nova-modal-body {
+  padding: var(--nova-space-5);
+}
+nova-modal-footer {
+  padding: var(--nova-space-4) var(--nova-space-5);
+  border-top: 1px solid var(--nova-glass-border);
+  display: flex;
+  gap: var(--nova-space-3);
+  justify-content: flex-end;
+}
+
+/* ========================= Buttons ========================= */
+nova-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nova-space-2);
+  font-family: var(--nova-font-sans);
+  font-size: var(--nova-text-sm);
+  font-weight: 600;
+  padding: var(--nova-space-2.5) var(--nova-space-4);
+  border-radius: var(--nova-radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--nova-motion-fast) var(--nova-ease-out);
+}
+nova-button.primary {
+  background: var(--nova-accent-gradient);
+  color: #fff;
+  box-shadow: var(--nova-shadow-glow);
+}
+nova-button.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.7);
+}
+nova-button.secondary {
+  background: var(--nova-bg-700);
+  color: var(--nova-text-primary);
+  border: 1px solid var(--nova-glass-border);
+}
+nova-button.secondary:hover {
+  background: var(--nova-bg-600);
+}
+nova-button.ghost {
+  background: transparent;
+  color: var(--nova-text-secondary);
+}
+nova-button.ghost:hover {
+  background: var(--nova-glass-bg);
+  color: var(--nova-text-primary);
+}
+nova-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========================= Inputs ========================= */
+nova-input, nova-textarea, nova-select {
+  font-family: var(--nova-font-sans);
+  font-size: var(--nova-text-base);
+  color: var(--nova-text-primary);
+  background: var(--nova-bg-900);
+  border: 1px solid var(--nova-glass-border);
+  border-radius: var(--nova-radius-md);
+  padding: var(--nova-space-2.5) var(--nova-space-3);
+  width: 100%;
+  transition: all var(--nova-motion-fast) var(--nova-ease-out);
+}
+nova-input:focus, nova-textarea:focus, nova-select:focus {
+  outline: none;
+  border-color: var(--nova-accent-primary);
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.15);
+}
+nova-input::placeholder, nova-textarea::placeholder {
+  color: var(--nova-text-tertiary);
+}
+nova-textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ========================= Animations ========================= */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+@keyframes typing {
+  0%, 40%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-6px); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+@keyframes pulse-progress {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+@keyframes toast-slide {
+  from { transform: translateY(120%); }
+  to { transform: translateY(0); }
+}
